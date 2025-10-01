@@ -14,14 +14,10 @@ const Login = () => {
     }
 
     try {
-      // Call backend login endpoint
       const response = await fetch('http://localhost:5263/api/User/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          Email: email,      // Match backend property
-          Password: password // Match backend property
-        })
+        body: JSON.stringify({ Email: email, Password: password }),
       });
 
       if (!response.ok) {
@@ -32,23 +28,14 @@ const Login = () => {
 
       const data = await response.json();
       const token = data.token;
-
-      // Store JWT in localStorage
       localStorage.setItem('jwtToken', token);
 
-      // Decode JWT payload
       const payload = JSON.parse(atob(token.split('.')[1]));
       const role = payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
 
-      // Redirect based on role
-      if (role.toLowerCase() === 'backoffice') {
-        navigate('/backoffice');
-      } else if (role.toLowerCase() === 'operator') {
-        navigate('/operator');
-      } else {
-        setError('Unknown user role');
-      }
-
+      if (role.toLowerCase() === 'backoffice') navigate('/backoffice');
+      else if (role.toLowerCase() === 'operator') navigate('/operator');
+      else setError('Unknown user role');
     } catch (err) {
       setError('Server error: ' + err.message);
     }
@@ -63,25 +50,33 @@ const Login = () => {
         <input
           type="email"
           placeholder="Email"
-          className="w-full p-2 mb-4 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full p-2 mb-4 border rounded"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-
         <input
           type="password"
           placeholder="Password"
-          className="w-full p-2 mb-4 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full p-2 mb-4 border rounded"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-
         <button
           className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition"
           onClick={handleLogin}
         >
           Login
         </button>
+
+        <p className="text-sm text-gray-600 mt-4 text-center">
+          Don't have an account?{' '}
+          <span
+            onClick={() => navigate('/signup')}
+            className="text-green-500 cursor-pointer"
+          >
+            Sign Up
+          </span>
+        </p>
       </div>
     </div>
   );
