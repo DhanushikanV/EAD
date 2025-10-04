@@ -1,162 +1,125 @@
 package com.evcharging.mobile.db.dao;
 
-import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.OnConflictStrategy;
-import androidx.room.Query;
-import androidx.room.Update;
-
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import com.evcharging.mobile.db.database.AppDbHelper;
 import com.evcharging.mobile.db.entities.BookingLocal;
-
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * BookingDao Interface
+ * BookingDao - Raw SQLite Implementation
  * 
- * This DAO provides methods to interact with the bookings_local table.
- * It defines database operations for booking data management.
- * 
- * @author EV Charging Mobile Team
- * @version 1.0
+ * This DAO provides raw SQLite operations for the bookings_local table.
+ * Uses SQLiteOpenHelper directly without Room ORM.
  */
-@Dao
-public interface BookingDao {
+public class BookingDao {
+    private SQLiteDatabase database;
+    private AppDbHelper dbHelper;
+
+    public BookingDao(Context context) {
+        dbHelper = new AppDbHelper(context);
+    }
+
+    public void open() {
+        database = dbHelper.getWritableDatabase();
+    }
+
+    public void close() {
+        dbHelper.close();
+    }
 
     /**
-     * Insert a new booking or replace if exists
-     * 
-     * @param booking Booking entity to insert
+     * Insert a new booking
      */
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertBooking(BookingLocal booking);
-
-    /**
-     * Insert multiple bookings
-     * 
-     * @param bookings List of booking entities to insert
-     */
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertBookings(List<BookingLocal> bookings);
-
-    /**
-     * Update existing booking
-     * 
-     * @param booking Booking entity to update
-     */
-    @Update
-    void updateBooking(BookingLocal booking);
-
-    /**
-     * Delete booking
-     * 
-     * @param booking Booking entity to delete
-     */
-    @Delete
-    void deleteBooking(BookingLocal booking);
-
-    /**
-     * Get all bookings for a user (by NIC)
-     * 
-     * @param nic User NIC
-     * @return List of bookings for the user
-     */
-    @Query("SELECT * FROM bookings_local WHERE nic = :nic ORDER BY reservationDateTime DESC")
-    List<BookingLocal> getBookingsByNic(String nic);
+    public long insertBooking(BookingLocal booking) {
+        ContentValues values = new ContentValues();
+        values.put("bookingId", booking.getBookingId());
+        values.put("nic", booking.getNic());
+        values.put("stationId", booking.getStationId());
+        values.put("startTs", booking.getReservationDateTime());
+        values.put("status", booking.getStatus());
+        values.put("qrPayload", booking.getQrPayload());
+        values.put("updatedAt", booking.getUpdatedAt());
+        
+        return database.insert("bookings_local", null, values);
+    }
 
     /**
      * Get booking by ID
-     * 
-     * @param bookingId Booking ID
-     * @return BookingLocal entity or null if not found
      */
-    @Query("SELECT * FROM bookings_local WHERE bookingId = :bookingId")
-    BookingLocal getBookingById(String bookingId);
+    public BookingLocal getBookingById(String bookingId) {
+        Cursor cursor = database.query("bookings_local", null, 
+            "bookingId = ?", new String[]{bookingId}, null, null, null);
+        
+        if (cursor.moveToFirst()) {
+            BookingLocal booking = cursorToBooking(cursor);
+            cursor.close();
+            return booking;
+        }
+        cursor.close();
+        return null;
+    }
 
     /**
-     * Get upcoming bookings for a user
-     * 
-     * @param nic User NIC
-     * @param currentTime Current timestamp
-     * @return List of upcoming bookings
+     * Get all bookings
      */
-    @Query("SELECT * FROM bookings_local WHERE nic = :nic AND reservationDateTime > :currentTime ORDER BY reservationDateTime ASC")
-    List<BookingLocal> getUpcomingBookings(String nic, long currentTime);
-
-    /**
-     * Get past bookings for a user
-     * 
-     * @param nic User NIC
-     * @param currentTime Current timestamp
-     * @return List of past bookings
-     */
-    @Query("SELECT * FROM bookings_local WHERE nic = :nic AND reservationDateTime < :currentTime ORDER BY reservationDateTime DESC")
-    List<BookingLocal> getPastBookings(String nic, long currentTime);
-
-    /**
-     * Get bookings by status
-     * 
-     * @param nic User NIC
-     * @param status Booking status
-     * @return List of bookings with specified status
-     */
-    @Query("SELECT * FROM bookings_local WHERE nic = :nic AND status = :status ORDER BY reservationDateTime DESC")
-    List<BookingLocal> getBookingsByStatus(String nic, String status);
-
-    /**
-     * Get bookings for a station on a specific date
-     * 
-     * @param stationId Station ID
-     * @param date Date timestamp (start of day)
-     * @param nextDay Next day timestamp (start of next day)
-     * @return List of bookings for the station on the date
-     */
-    @Query("SELECT * FROM bookings_local WHERE stationId = :stationId AND reservationDateTime >= :date AND reservationDateTime < :nextDay ORDER BY reservationDateTime ASC")
-    List<BookingLocal> getBookingsForStationAndDate(String stationId, long date, long nextDay);
-
-    /**
-     * Get bookings for today (for operators)
-     * 
-     * @param stationId Station ID
-     * @param startOfDay Start of current day timestamp
-     * @param endOfDay End of current day timestamp
-     * @return List of today's bookings for the station
-     */
-    @Query("SELECT * FROM bookings_local WHERE stationId = :stationId AND reservationDateTime >= :startOfDay AND reservationDateTime <= :endOfDay ORDER BY reservationDateTime ASC")
-    List<BookingLocal> getTodayBookings(String stationId, long startOfDay, long endOfDay);
-
-    /**
-     * Delete all bookings for a user (for logout)
-     * 
-     * @param nic User NIC
-     */
-    @Query("DELETE FROM bookings_local WHERE nic = :nic")
-    void deleteBookingsByNic(String nic);
-
-    /**
-     * Delete all bookings (for refresh)
-     */
-    @Query("DELETE FROM bookings_local")
-    void deleteAllBookings();
+    public List<BookingLocal> getAllBookings() {
+        List<BookingLocal> bookings = new ArrayList<>();
+        Cursor cursor = database.query("bookings_local", null, null, null, null, null, "startTs DESC");
+        
+        while (cursor.moveToNext()) {
+            bookings.add(cursorToBooking(cursor));
+        }
+        cursor.close();
+        return bookings;
+    }
 
     /**
      * Update booking status
-     * 
-     * @param bookingId Booking ID
-     * @param status New status
-     * @param updatedAt Last update timestamp
      */
-    @Query("UPDATE bookings_local SET status = :status, updatedAt = :updatedAt WHERE bookingId = :bookingId")
-    void updateBookingStatus(String bookingId, String status, long updatedAt);
+    public int updateBookingStatus(String bookingId, String status, long updatedAt) {
+        ContentValues values = new ContentValues();
+        values.put("status", status);
+        values.put("updatedAt", updatedAt);
+        
+        return database.update("bookings_local", values, "bookingId = ?", 
+            new String[]{bookingId});
+    }
 
     /**
      * Update booking QR payload
-     * 
-     * @param bookingId Booking ID
-     * @param qrPayload QR payload data
-     * @param updatedAt Last update timestamp
      */
-    @Query("UPDATE bookings_local SET qrPayload = :qrPayload, updatedAt = :updatedAt WHERE bookingId = :bookingId")
-    void updateBookingQRPayload(String bookingId, String qrPayload, long updatedAt);
-}
+    public int updateBookingQRPayload(String bookingId, String qrPayload, long updatedAt) {
+        ContentValues values = new ContentValues();
+        values.put("qrPayload", qrPayload);
+        values.put("updatedAt", updatedAt);
+        
+        return database.update("bookings_local", values, "bookingId = ?", 
+            new String[]{bookingId});
+    }
 
+    /**
+     * Delete all bookings
+     */
+    public void deleteAllBookings() {
+        database.delete("bookings_local", null, null);
+    }
+
+    /**
+     * Convert cursor to BookingLocal object
+     */
+    private BookingLocal cursorToBooking(Cursor cursor) {
+        BookingLocal booking = new BookingLocal();
+        booking.setBookingId(cursor.getString(cursor.getColumnIndexOrThrow("bookingId")));
+        booking.setNic(cursor.getString(cursor.getColumnIndexOrThrow("nic")));
+        booking.setStationId(cursor.getString(cursor.getColumnIndexOrThrow("stationId")));
+        booking.setReservationDateTime(cursor.getLong(cursor.getColumnIndexOrThrow("startTs")));
+        booking.setStatus(cursor.getString(cursor.getColumnIndexOrThrow("status")));
+        booking.setQrPayload(cursor.getString(cursor.getColumnIndexOrThrow("qrPayload")));
+        booking.setUpdatedAt(cursor.getLong(cursor.getColumnIndexOrThrow("updatedAt")));
+        return booking;
+    }
+}

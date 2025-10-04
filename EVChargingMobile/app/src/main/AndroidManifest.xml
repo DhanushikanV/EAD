@@ -91,6 +91,12 @@
             android:exported="false"
             android:theme="@style/Theme.EVChargingMobile" />
 
+        <!-- API Test Activity -->
+        <activity
+            android:name=".ui.APITestActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EVChargingMobile" />
+
     </application>
 
 </manifest>

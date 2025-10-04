@@ -1,100 +1,103 @@
 package com.evcharging.mobile.db.dao;
 
-import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.OnConflictStrategy;
-import androidx.room.Query;
-import androidx.room.Update;
-
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import com.evcharging.mobile.db.database.AppDbHelper;
 import com.evcharging.mobile.db.entities.UserLocal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * UserDao Interface
+ * UserDao - Raw SQLite Implementation
  * 
- * This DAO (Data Access Object) provides methods to interact with the user_local table.
- * It defines database operations for user data management.
- * 
- * @author EV Charging Mobile Team
- * @version 1.0
+ * This DAO provides raw SQLite operations for the user_local table.
+ * Uses SQLiteOpenHelper directly without Room ORM.
  */
-@Dao
-public interface UserDao {
+public class UserDao {
+    private SQLiteDatabase database;
+    private AppDbHelper dbHelper;
+
+    public UserDao(Context context) {
+        dbHelper = new AppDbHelper(context);
+    }
+
+    public void open() {
+        database = dbHelper.getWritableDatabase();
+    }
+
+    public void close() {
+        dbHelper.close();
+    }
 
     /**
-     * Insert a new user or replace if exists
-     * 
-     * @param user User entity to insert
+     * Insert a new user
      */
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertUser(UserLocal user);
-
-    /**
-     * Update existing user
-     * 
-     * @param user User entity to update
-     */
-    @Update
-    void updateUser(UserLocal user);
-
-    /**
-     * Delete user
-     * 
-     * @param user User entity to delete
-     */
-    @Delete
-    void deleteUser(UserLocal user);
+    public long insertUser(UserLocal user) {
+        ContentValues values = new ContentValues();
+        values.put("nic", user.getNic());
+        values.put("name", user.getName());
+        values.put("email", user.getEmail());
+        values.put("phone", user.getPhone());
+        values.put("status", user.getStatus());
+        values.put("authToken", user.getAuthToken());
+        values.put("lastSyncAt", user.getLastSyncAt());
+        
+        return database.insert("user_local", null, values);
+    }
 
     /**
      * Get user by NIC
-     * 
-     * @param nic User NIC
-     * @return UserLocal entity or null if not found
      */
-    @Query("SELECT * FROM user_local WHERE nic = :nic")
-    UserLocal getUserByNic(String nic);
+    public UserLocal getUserByNic(String nic) {
+        Cursor cursor = database.query("user_local", null, 
+            "nic = ?", new String[]{nic}, null, null, null);
+        
+        if (cursor.moveToFirst()) {
+            UserLocal user = cursorToUser(cursor);
+            cursor.close();
+            return user;
+        }
+        cursor.close();
+        return null;
+    }
 
     /**
-     * Get user by email
-     * 
-     * @param email User email
-     * @return UserLocal entity or null if not found
+     * Update user
      */
-    @Query("SELECT * FROM user_local WHERE email = :email")
-    UserLocal getUserByEmail(String email);
+    public int updateUser(UserLocal user) {
+        ContentValues values = new ContentValues();
+        values.put("name", user.getName());
+        values.put("email", user.getEmail());
+        values.put("phone", user.getPhone());
+        values.put("status", user.getStatus());
+        values.put("authToken", user.getAuthToken());
+        values.put("lastSyncAt", user.getLastSyncAt());
+        
+        return database.update("user_local", values, "nic = ?", 
+            new String[]{user.getNic()});
+    }
 
     /**
-     * Check if user exists
-     * 
-     * @param nic User NIC
-     * @return true if user exists, false otherwise
+     * Delete all users
      */
-    @Query("SELECT COUNT(*) > 0 FROM user_local WHERE nic = :nic")
-    boolean userExists(String nic);
+    public void deleteAllUsers() {
+        database.delete("user_local", null, null);
+    }
 
     /**
-     * Delete all users (for logout)
+     * Convert cursor to UserLocal object
      */
-    @Query("DELETE FROM user_local")
-    void deleteAllUsers();
-
-    /**
-     * Update user's auth token
-     * 
-     * @param nic User NIC
-     * @param authToken New auth token
-     * @param lastSyncAt Last sync timestamp
-     */
-    @Query("UPDATE user_local SET authToken = :authToken, lastSyncAt = :lastSyncAt WHERE nic = :nic")
-    void updateAuthToken(String nic, String authToken, long lastSyncAt);
-
-    /**
-     * Update user's last sync timestamp
-     * 
-     * @param nic User NIC
-     * @param lastSyncAt Last sync timestamp
-     */
-    @Query("UPDATE user_local SET lastSyncAt = :lastSyncAt WHERE nic = :nic")
-    void updateLastSync(String nic, long lastSyncAt);
+    private UserLocal cursorToUser(Cursor cursor) {
+        UserLocal user = new UserLocal();
+        user.setNic(cursor.getString(cursor.getColumnIndexOrThrow("nic")));
+        user.setName(cursor.getString(cursor.getColumnIndexOrThrow("name")));
+        user.setEmail(cursor.getString(cursor.getColumnIndexOrThrow("email")));
+        user.setPhone(cursor.getString(cursor.getColumnIndexOrThrow("phone")));
+        user.setStatus(cursor.getString(cursor.getColumnIndexOrThrow("status")));
+        user.setAuthToken(cursor.getString(cursor.getColumnIndexOrThrow("authToken")));
+        user.setLastSyncAt(cursor.getLong(cursor.getColumnIndexOrThrow("lastSyncAt")));
+        return user;
+    }
 }
-

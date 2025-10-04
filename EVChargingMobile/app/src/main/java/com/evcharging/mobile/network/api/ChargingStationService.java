@@ -25,7 +25,7 @@ public interface ChargingStationService {
      * 
      * @return Call<List<ChargingStation>> containing all stations
      */
-    @GET("chargingstation")
+    @GET("ChargingStation")
     Call<List<ChargingStation>> getAllStations();
 
     /**
@@ -36,7 +36,7 @@ public interface ChargingStationService {
      * @param radius Search radius in kilometers (optional)
      * @return Call<List<ChargingStation>> containing nearby stations
      */
-    @GET("chargingstation")
+    @GET("ChargingStation")
     Call<List<ChargingStation>> getNearbyStations(
             @Query("lat") double latitude,
             @Query("lng") double longitude,
@@ -49,7 +49,7 @@ public interface ChargingStationService {
      * @param id Station ID
      * @return Call<ChargingStation> containing station details
      */
-    @GET("chargingstation/{id}")
+    @GET("ChargingStation/{id}")
     Call<ChargingStation> getStationById(@Path("id") String id);
 
     /**
@@ -58,7 +58,7 @@ public interface ChargingStationService {
      * @param query Search query
      * @return Call<List<ChargingStation>> containing matching stations
      */
-    @GET("chargingstation/search")
+    @GET("ChargingStation/search")
     Call<List<ChargingStation>> searchStations(@Query("q") String query);
 
     /**
@@ -67,7 +67,7 @@ public interface ChargingStationService {
      * @param type Station type (AC/DC)
      * @return Call<List<ChargingStation>> containing stations of specified type
      */
-    @GET("chargingstation")
+    @GET("ChargingStation")
     Call<List<ChargingStation>> getStationsByType(@Query("type") String type);
 
     /**
@@ -77,7 +77,7 @@ public interface ChargingStationService {
      * @param date Date in YYYY-MM-DD format
      * @return Call<ChargingStation> with updated availability
      */
-    @GET("chargingstation/{id}/availability")
+    @GET("ChargingStation/{id}/availability")
     Call<ChargingStation> getStationAvailability(
             @Path("id") String stationId,
             @Query("date") String date

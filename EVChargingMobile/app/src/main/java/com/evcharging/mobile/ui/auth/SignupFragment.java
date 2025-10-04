@@ -70,7 +70,7 @@ public class SignupFragment extends Fragment {
         
         if (validateInput(nic, name, email, phone, password, confirmPassword)) {
             Log.d("SignupFragment", "Validation passed, calling performSignup");
-            performSignup(email, password);
+            performSignup(nic, name, email, phone, password);
         } else {
             Log.d("SignupFragment", "Validation failed");
         }
@@ -110,7 +110,7 @@ public class SignupFragment extends Fragment {
         return true;
     }
 
-    private void performSignup(String email, String password) {
+    private void performSignup(String nic, String name, String email, String phone, String password) {
         Log.d("SignupFragment", "performSignup() called with email: " + email);
         Context context = getContext();
         if (context == null) {
@@ -121,28 +121,46 @@ public class SignupFragment extends Fragment {
         Log.d("SignupFragment", "Creating AuthService...");
         AuthService authService = ApiClient.getRetrofitInstance(context).create(AuthService.class);
         
-        // Create signup request matching backend User model
+        // Create signup request matching backend EVOwner model
         SignupRequest signupRequest = new SignupRequest();
-        signupRequest.setUsername(email.replace("@gmail.com", "")); // Use email prefix as username
+        signupRequest.setNic(nic);
+        signupRequest.setName(name);
         signupRequest.setEmail(email);
-        signupRequest.setPassword(password); // Backend will hash it
-        signupRequest.setPasswordHash(""); // Empty - backend fills this
-        signupRequest.setRole("Backoffice");
+        signupRequest.setPhone(phone);
+        signupRequest.setPasswordHash(password); // Backend expects this field
         signupRequest.setStatus("Active");
+        
+        // Add default EV model
+        java.util.List<String> evModels = new java.util.ArrayList<>();
+        evModels.add("Tesla Model 3"); // Default EV model
+        signupRequest.setEvModels(evModels);
 
+        Log.d("SignupFragment", "Sending signup request: " + signupRequest.getEmail());
+        
         authService.signup(signupRequest).enqueue(new Callback<AuthResponse>() {
             @Override
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
+                Log.d("SignupFragment", "Response received: " + response.code());
                 if (response.isSuccessful()) {
                     Toast.makeText(context, "Registration successful! Please login.", Toast.LENGTH_SHORT).show();
                     navigateToLogin();
                 } else {
-                    Toast.makeText(context, "Registration failed: " + response.message(), Toast.LENGTH_SHORT).show();
+                    String errorMsg = "Registration failed: " + response.message();
+                    if (response.errorBody() != null) {
+                        try {
+                            errorMsg += " - " + response.errorBody().string();
+                        } catch (Exception e) {
+                            Log.e("SignupFragment", "Error reading error body", e);
+                        }
+                    }
+                    Toast.makeText(context, errorMsg, Toast.LENGTH_LONG).show();
+                    Log.e("SignupFragment", "Signup failed: " + response.code() + " - " + response.message());
                 }
             }
 
             @Override
             public void onFailure(Call<AuthResponse> call, Throwable t) {
+                Log.e("SignupFragment", "Network error", t);
                 Toast.makeText(context, "Network error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

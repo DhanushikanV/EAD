@@ -15,34 +15,34 @@ import java.util.List;
  */
 public class ChargingStation {
 
-    @Json(name = "Id")
+    @Json(name = "id")
     private String id;
 
-    @Json(name = "Name")
+    @Json(name = "name")
     private String name;
 
-    @Json(name = "Location")
+    @Json(name = "location")
     private String location;
 
-    @Json(name = "Type")
+    @Json(name = "type")
     private String type; // AC/DC
 
-    @Json(name = "TotalSlots")
+    @Json(name = "totalSlots")
     private int totalSlots;
 
-    @Json(name = "AvailableSlots")
+    @Json(name = "availableSlots")
     private int availableSlots;
 
-    @Json(name = "Status")
+    @Json(name = "status")
     private String status; // Active/Deactivated
 
-    @Json(name = "Schedule")
+    @Json(name = "schedule")
     private List<String> schedule;
 
-    @Json(name = "Latitude")
+    @Json(name = "latitude")
     private double latitude;
 
-    @Json(name = "Longitude")
+    @Json(name = "longitude")
     private double longitude;
 
     /**

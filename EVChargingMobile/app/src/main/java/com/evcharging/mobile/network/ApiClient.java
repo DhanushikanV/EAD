@@ -28,8 +28,8 @@ public class ApiClient {
     // TODO: Replace with your actual backend URL
     // Backend API Configuration - Load from environment
     private static final String BASE_URL = System.getenv("BACKEND_API_URL") != null ? 
-        System.getenv("BACKEND_API_URL") : "http://192.168.8.111:5263/api/";
-    // For physical device, use your computer's IP: "http://192.168.1.100:5000/api/"
+        System.getenv("BACKEND_API_URL") : "http://localhost:5263/api/";
+    // Using localhost with adb port forwarding
     
     private static Retrofit retrofit;
     private static SharedPreferencesManager preferencesManager;

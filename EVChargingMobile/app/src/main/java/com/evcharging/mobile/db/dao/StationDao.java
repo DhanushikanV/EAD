@@ -1,117 +1,117 @@
 package com.evcharging.mobile.db.dao;
 
-import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.OnConflictStrategy;
-import androidx.room.Query;
-import androidx.room.Update;
-
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import com.evcharging.mobile.db.database.AppDbHelper;
 import com.evcharging.mobile.db.entities.StationCache;
-
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * StationDao Interface
+ * StationDao - Raw SQLite Implementation
  * 
- * This DAO provides methods to interact with the stations_cache table.
- * It defines database operations for charging station data management.
- * 
- * @author EV Charging Mobile Team
- * @version 1.0
+ * This DAO provides raw SQLite operations for the stations_cache table.
+ * Uses SQLiteOpenHelper directly without Room ORM.
  */
-@Dao
-public interface StationDao {
+public class StationDao {
+    private SQLiteDatabase database;
+    private AppDbHelper dbHelper;
+
+    public StationDao(Context context) {
+        dbHelper = new AppDbHelper(context);
+    }
+
+    public void open() {
+        database = dbHelper.getWritableDatabase();
+    }
+
+    public void close() {
+        dbHelper.close();
+    }
 
     /**
-     * Insert a new station or replace if exists
-     * 
-     * @param station Station entity to insert
+     * Insert a new station into the cache
      */
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertStation(StationCache station);
-
-    /**
-     * Insert multiple stations
-     * 
-     * @param stations List of station entities to insert
-     */
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertStations(List<StationCache> stations);
-
-    /**
-     * Update existing station
-     * 
-     * @param station Station entity to update
-     */
-    @Update
-    void updateStation(StationCache station);
-
-    /**
-     * Delete station
-     * 
-     * @param station Station entity to delete
-     */
-    @Delete
-    void deleteStation(StationCache station);
-
-    /**
-     * Get all stations
-     * 
-     * @return List of all stations
-     */
-    @Query("SELECT * FROM stations_cache ORDER BY name ASC")
-    List<StationCache> getAllStations();
+    public long insertStation(StationCache station) {
+        ContentValues values = new ContentValues();
+        values.put("stationId", station.getStationId());
+        values.put("name", station.getName());
+        values.put("type", station.getType());
+        values.put("latitude", station.getLatitude());
+        values.put("longitude", station.getLongitude());
+        values.put("address", station.getAddress());
+        values.put("isActive", station.isActive() ? 1 : 0);
+        
+        return database.insert("stations_cache", null, values);
+    }
 
     /**
      * Get station by ID
-     * 
-     * @param stationId Station ID
-     * @return StationCache entity or null if not found
      */
-    @Query("SELECT * FROM stations_cache WHERE stationId = :stationId")
-    StationCache getStationById(String stationId);
+    public StationCache getStationById(String stationId) {
+        Cursor cursor = database.query("stations_cache", null, 
+            "stationId = ?", new String[]{stationId}, null, null, null);
+        
+        if (cursor.moveToFirst()) {
+            StationCache station = cursorToStation(cursor);
+            cursor.close();
+            return station;
+        }
+        cursor.close();
+        return null;
+    }
 
     /**
-     * Get active stations only
-     * 
-     * @return List of active stations
+     * Get all stations
      */
-    @Query("SELECT * FROM stations_cache WHERE isActive = 1 ORDER BY name ASC")
-    List<StationCache> getActiveStations();
+    public List<StationCache> getAllStations() {
+        List<StationCache> stations = new ArrayList<>();
+        Cursor cursor = database.query("stations_cache", null, null, null, null, null, "name ASC");
+        
+        while (cursor.moveToNext()) {
+            stations.add(cursorToStation(cursor));
+        }
+        cursor.close();
+        return stations;
+    }
 
     /**
-     * Get stations by type (AC/DC)
-     * 
-     * @param type Station type (AC or DC)
-     * @return List of stations of specified type
+     * Update station
      */
-    @Query("SELECT * FROM stations_cache WHERE type = :type AND isActive = 1 ORDER BY name ASC")
-    List<StationCache> getStationsByType(String type);
+    public int updateStation(StationCache station) {
+        ContentValues values = new ContentValues();
+        values.put("name", station.getName());
+        values.put("type", station.getType());
+        values.put("latitude", station.getLatitude());
+        values.put("longitude", station.getLongitude());
+        values.put("address", station.getAddress());
+        values.put("isActive", station.isActive() ? 1 : 0);
+        
+        return database.update("stations_cache", values, "stationId = ?", 
+            new String[]{station.getStationId()});
+    }
 
     /**
-     * Search stations by name
-     * 
-     * @param searchQuery Search query
-     * @return List of matching stations
+     * Delete all stations
      */
-    @Query("SELECT * FROM stations_cache WHERE name LIKE '%' || :searchQuery || '%' AND isActive = 1 ORDER BY name ASC")
-    List<StationCache> searchStationsByName(String searchQuery);
+    public void deleteAllStations() {
+        database.delete("stations_cache", null, null);
+    }
 
     /**
-     * Delete all stations (for refresh)
+     * Convert cursor to StationCache object
      */
-    @Query("DELETE FROM stations_cache")
-    void deleteAllStations();
-
-    /**
-     * Update station availability
-     * 
-     * @param stationId Station ID
-     * @param availableSlots Number of available slots
-     * @param lastUpdated Last update timestamp
-     */
-    @Query("UPDATE stations_cache SET availableSlots = :availableSlots, lastUpdated = :lastUpdated WHERE stationId = :stationId")
-    void updateStationAvailability(String stationId, int availableSlots, long lastUpdated);
+    private StationCache cursorToStation(Cursor cursor) {
+        StationCache station = new StationCache();
+        station.setStationId(cursor.getString(cursor.getColumnIndexOrThrow("stationId")));
+        station.setName(cursor.getString(cursor.getColumnIndexOrThrow("name")));
+        station.setType(cursor.getString(cursor.getColumnIndexOrThrow("type")));
+        station.setLatitude(cursor.getDouble(cursor.getColumnIndexOrThrow("latitude")));
+        station.setLongitude(cursor.getDouble(cursor.getColumnIndexOrThrow("longitude")));
+        station.setAddress(cursor.getString(cursor.getColumnIndexOrThrow("address")));
+        station.setActive(cursor.getInt(cursor.getColumnIndexOrThrow("isActive")) == 1);
+        return station;
+    }
 }
-

@@ -1,116 +1,99 @@
 package com.evcharging.mobile.db.dao;
 
-import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.OnConflictStrategy;
-import androidx.room.Query;
-import androidx.room.Update;
-
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import com.evcharging.mobile.db.database.AppDbHelper;
 import com.evcharging.mobile.db.entities.StationSlotsCache;
-
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * StationSlotsDao Interface
+ * StationSlotsDao - Raw SQLite Implementation
  * 
- * This DAO provides methods to interact with the station_slots_cache table.
- * It defines database operations for slot availability data management.
- * 
- * @author EV Charging Mobile Team
- * @version 1.0
+ * This DAO provides raw SQLite operations for the station_slots_cache table.
+ * Uses SQLiteOpenHelper directly without Room ORM.
  */
-@Dao
-public interface StationSlotsDao {
+public class StationSlotsDao {
+    private SQLiteDatabase database;
+    private AppDbHelper dbHelper;
+
+    public StationSlotsDao(Context context) {
+        dbHelper = new AppDbHelper(context);
+    }
+
+    public void open() {
+        database = dbHelper.getWritableDatabase();
+    }
+
+    public void close() {
+        dbHelper.close();
+    }
 
     /**
-     * Insert a new slot entry or replace if exists
-     * 
-     * @param slot Slot entity to insert
+     * Insert a new slot
      */
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertSlot(StationSlotsCache slot);
+    public long insertSlot(StationSlotsCache slot) {
+        ContentValues values = new ContentValues();
+        values.put("stationId", slot.getStationId());
+        values.put("date", slot.getDate());
+        values.put("timeSlotStart", slot.getTimeSlotStart());
+        values.put("timeSlotEnd", slot.getTimeSlotEnd());
+        values.put("availableCount", slot.getAvailableCount());
+        
+        return database.insert("station_slots_cache", null, values);
+    }
 
     /**
-     * Insert multiple slot entries
-     * 
-     * @param slots List of slot entities to insert
+     * Get slots by station ID and date
      */
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertSlots(List<StationSlotsCache> slots);
+    public List<StationSlotsCache> getSlotsByStationIdAndDate(String stationId, String date) {
+        List<StationSlotsCache> slots = new ArrayList<>();
+        Cursor cursor = database.query("station_slots_cache", null, 
+            "stationId = ? AND date = ?", new String[]{stationId, date}, 
+            null, null, "timeSlotStart ASC");
+        
+        while (cursor.moveToNext()) {
+            slots.add(cursorToSlot(cursor));
+        }
+        cursor.close();
+        return slots;
+    }
 
     /**
-     * Update existing slot entry
-     * 
-     * @param slot Slot entity to update
+     * Update slot
      */
-    @Update
-    void updateSlot(StationSlotsCache slot);
+    public int updateSlot(StationSlotsCache slot) {
+        ContentValues values = new ContentValues();
+        values.put("stationId", slot.getStationId());
+        values.put("date", slot.getDate());
+        values.put("timeSlotStart", slot.getTimeSlotStart());
+        values.put("timeSlotEnd", slot.getTimeSlotEnd());
+        values.put("availableCount", slot.getAvailableCount());
+        
+        return database.update("station_slots_cache", values, "id = ?", 
+            new String[]{String.valueOf(slot.getId())});
+    }
 
     /**
-     * Delete slot entry
-     * 
-     * @param slot Slot entity to delete
+     * Delete all slots
      */
-    @Delete
-    void deleteSlot(StationSlotsCache slot);
+    public void deleteAllSlots() {
+        database.delete("station_slots_cache", null, null);
+    }
 
     /**
-     * Get all slots for a station on a specific date
-     * 
-     * @param stationId Station ID
-     * @param date Date in YYYY-MM-DD format
-     * @return List of slots for the station on the date
+     * Convert cursor to StationSlotsCache object
      */
-    @Query("SELECT * FROM station_slots_cache WHERE stationId = :stationId AND date = :date ORDER BY timeSlotStart ASC")
-    List<StationSlotsCache> getSlotsForStationAndDate(String stationId, String date);
-
-    /**
-     * Get available slots for a station on a specific date
-     * 
-     * @param stationId Station ID
-     * @param date Date in YYYY-MM-DD format
-     * @return List of available slots (availableCount > 0)
-     */
-    @Query("SELECT * FROM station_slots_cache WHERE stationId = :stationId AND date = :date AND availableCount > 0 ORDER BY timeSlotStart ASC")
-    List<StationSlotsCache> getAvailableSlotsForStationAndDate(String stationId, String date);
-
-    /**
-     * Get slots for a specific time range
-     * 
-     * @param stationId Station ID
-     * @param date Date in YYYY-MM-DD format
-     * @param startTime Start time in HH:mm format
-     * @param endTime End time in HH:mm format
-     * @return List of slots in the time range
-     */
-    @Query("SELECT * FROM station_slots_cache WHERE stationId = :stationId AND date = :date AND timeSlotStart >= :startTime AND timeSlotEnd <= :endTime ORDER BY timeSlotStart ASC")
-    List<StationSlotsCache> getSlotsInTimeRange(String stationId, String date, String startTime, String endTime);
-
-    /**
-     * Delete all slots for a station
-     * 
-     * @param stationId Station ID
-     */
-    @Query("DELETE FROM station_slots_cache WHERE stationId = :stationId")
-    void deleteSlotsForStation(String stationId);
-
-    /**
-     * Delete all slots (for refresh)
-     */
-    @Query("DELETE FROM station_slots_cache")
-    void deleteAllSlots();
-
-    /**
-     * Update slot availability
-     * 
-     * @param stationId Station ID
-     * @param date Date in YYYY-MM-DD format
-     * @param timeSlotStart Start time in HH:mm format
-     * @param availableCount New available count
-     * @param lastUpdated Last update timestamp
-     */
-    @Query("UPDATE station_slots_cache SET availableCount = :availableCount, lastUpdated = :lastUpdated WHERE stationId = :stationId AND date = :date AND timeSlotStart = :timeSlotStart")
-    void updateSlotAvailability(String stationId, String date, String timeSlotStart, int availableCount, long lastUpdated);
+    private StationSlotsCache cursorToSlot(Cursor cursor) {
+        StationSlotsCache slot = new StationSlotsCache();
+        slot.setId(cursor.getInt(cursor.getColumnIndexOrThrow("id")));
+        slot.setStationId(cursor.getString(cursor.getColumnIndexOrThrow("stationId")));
+        slot.setDate(cursor.getString(cursor.getColumnIndexOrThrow("date")));
+        slot.setTimeSlotStart(cursor.getString(cursor.getColumnIndexOrThrow("timeSlotStart")));
+        slot.setTimeSlotEnd(cursor.getString(cursor.getColumnIndexOrThrow("timeSlotEnd")));
+        slot.setAvailableCount(cursor.getInt(cursor.getColumnIndexOrThrow("availableCount")));
+        return slot;
+    }
 }
-

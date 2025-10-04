@@ -1,9 +1,16 @@
 # Environment Variables for EV Charging Mobile App
-# Copy this file to .env and fill in your actual values
-# DO NOT COMMIT .env FILE TO VERSION CONTROL
+# Copy this file to local.properties and fill in your actual values
+# DO NOT COMMIT local.properties TO VERSION CONTROL
 
 # Google Maps API Key
-GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+# 1. Go to https://console.cloud.google.com/
+# 2. Create a new project or select existing one
+# 3. Enable Maps SDK for Android
+# 4. Create credentials (API Key)
+# 5. Restrict the key to your app's package name and SHA-1 fingerprint
+# 6. Replace YOUR_GOOGLE_MAPS_API_KEY_HERE with your actual key
+GOOGLE_MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY_HERE
 
 # Backend API URL
-BACKEND_API_URL=http://your_backend_ip:port/api/
+# This should point to your backend server
+BACKEND_API_URL=http://localhost:5263/api/

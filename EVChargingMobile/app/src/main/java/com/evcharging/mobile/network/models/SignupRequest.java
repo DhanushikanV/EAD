@@ -1,66 +1,85 @@
 package com.evcharging.mobile.network.models;
 
 import com.squareup.moshi.Json;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * SignupRequest Model
  * 
- * This model represents the signup request payload sent to the registration API.
- * It contains user information for account creation.
+ * This model represents the EV Owner signup request payload sent to the registration API.
+ * It contains EV owner information for account creation.
  * 
  * @author EV Charging Mobile Team
  * @version 1.0
  */
 public class SignupRequest {
 
-    @Json(name = "username")
-    private String username;
+    @Json(name = "nic")
+    private String nic;
+
+    @Json(name = "name")
+    private String name;
 
     @Json(name = "email")
     private String email;
 
-    @Json(name = "password")
-    private String password;
+    @Json(name = "phone")
+    private String phone;
 
     @Json(name = "passwordHash")
     private String passwordHash;
 
-    @Json(name = "role")
-    private String role;
-
     @Json(name = "status")
     private String status;
+
+    @Json(name = "evModels")
+    private List<String> evModels;
 
     /**
      * Default constructor
      */
     public SignupRequest() {
+        this.evModels = new ArrayList<>();
     }
 
     /**
      * Constructor with parameters
      * 
-     * @param username User username
-     * @param email User email address
-     * @param password User password
-     * @param role User role
-     * @param status User status
+     * @param nic EV Owner NIC
+     * @param name EV Owner name
+     * @param email EV Owner email
+     * @param phone EV Owner phone
+     * @param passwordHash Hashed password
+     * @param status Account status
+     * @param evModels List of EV models
      */
-    public SignupRequest(String username, String email, String password, String role, String status) {
-        this.username = username;
+    public SignupRequest(String nic, String name, String email, String phone, 
+                        String passwordHash, String status, List<String> evModels) {
+        this.nic = nic;
+        this.name = name;
         this.email = email;
-        this.password = password;
-        this.role = role;
+        this.phone = phone;
+        this.passwordHash = passwordHash;
         this.status = status;
+        this.evModels = evModels != null ? evModels : new ArrayList<>();
     }
 
     // Getters and Setters
-    public String getUsername() {
-        return username;
+    public String getNic() {
+        return nic;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNic(String nic) {
+        this.nic = nic;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -71,12 +90,12 @@ public class SignupRequest {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getPasswordHash() {
@@ -87,19 +106,19 @@ public class SignupRequest {
         this.passwordHash = passwordHash;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
     public String getStatus() {
         return status;
     }
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public List<String> getEvModels() {
+        return evModels;
+    }
+
+    public void setEvModels(List<String> evModels) {
+        this.evModels = evModels;
     }
 }

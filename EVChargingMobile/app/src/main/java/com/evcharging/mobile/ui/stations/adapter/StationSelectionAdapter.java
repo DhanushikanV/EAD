@@ -92,14 +92,18 @@ public class StationSelectionAdapter extends RecyclerView.Adapter<StationSelecti
             // Set status color
             int statusColor;
             boolean isAvailable = station.getAvailableSlots() > 0;
+            boolean isOperational = "operational".equalsIgnoreCase(station.getStatus()) || 
+                                   "active".equalsIgnoreCase(station.getStatus());
             
             switch (station.getStatus().toLowerCase()) {
                 case "operational":
+                case "active":
                     statusColor = isAvailable ? 
                         itemView.getContext().getResources().getColor(R.color.status_approved) :
                         itemView.getContext().getResources().getColor(R.color.status_pending);
                     break;
                 case "maintenance":
+                case "deactivated":
                     statusColor = itemView.getContext().getResources().getColor(R.color.status_cancelled);
                     break;
                 default:
@@ -109,12 +113,13 @@ public class StationSelectionAdapter extends RecyclerView.Adapter<StationSelecti
             tvStatus.setTextColor(statusColor);
 
             // Enable/disable select button based on availability
-            btnSelect.setEnabled(isAvailable && "operational".equalsIgnoreCase(station.getStatus()));
-            btnSelect.setAlpha(isAvailable && "operational".equalsIgnoreCase(station.getStatus()) ? 1.0f : 0.5f);
+            btnSelect.setEnabled(isAvailable && isOperational);
+            btnSelect.setAlpha(isAvailable && isOperational ? 1.0f : 0.5f);
             
-            if (isAvailable && "operational".equalsIgnoreCase(station.getStatus())) {
+            if (isAvailable && isOperational) {
                 btnSelect.setText("Select");
-            } else if ("maintenance".equalsIgnoreCase(station.getStatus())) {
+            } else if ("maintenance".equalsIgnoreCase(station.getStatus()) || 
+                      "deactivated".equalsIgnoreCase(station.getStatus())) {
                 btnSelect.setText("Under Maintenance");
             } else {
                 btnSelect.setText("No Slots Available");

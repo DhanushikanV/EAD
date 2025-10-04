@@ -29,12 +29,12 @@ public interface AuthService {
     Call<AuthResponse> login(@Body LoginRequest request);
 
     /**
-     * User signup endpoint
+     * EV Owner signup endpoint
      * 
-     * @param request Signup request containing user details
-     * @return Call<AuthResponse> containing JWT token and user info
+     * @param request Signup request containing EV owner details
+     * @return Call<AuthResponse> containing success response
      */
-    @POST("user")
+    @POST("EVOwner")
     Call<AuthResponse> signup(@Body SignupRequest request);
 
     /**
