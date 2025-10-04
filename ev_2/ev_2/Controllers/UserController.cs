@@ -42,7 +42,17 @@ namespace EV_2.Controllers
             // Generate JWT
             var token = _jwtService.GenerateToken(user);
 
-            return Ok(new { token });
+            // Return token and user info
+            return Ok(new { 
+                token,
+                user = new {
+                    id = user.Id,
+                    username = user.Username,
+                    email = user.Email,
+                    role = user.Role,
+                    status = user.Status
+                }
+            });
         }
 
 

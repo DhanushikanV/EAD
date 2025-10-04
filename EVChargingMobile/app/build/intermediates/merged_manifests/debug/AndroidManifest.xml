@@ -65,10 +65,10 @@
         android:theme="@style/Theme.EVChargingMobile"
         android:usesCleartextTraffic="true" >
 
-        <!-- Google Maps API Key -->
+        <!-- Google Maps API Key - Load from environment -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCAG9V78K_8sdbOsGkUPzeOBvjtXzdDl3c" />
+            android:value="AIzaSyDummyKeyForTesting123456789" />
 
         <!-- Main Activity -->
         <activity
@@ -132,6 +132,12 @@
             android:exported="false"
             android:theme="@style/Theme.EVChargingMobile" />
 
+        <!-- API Test Activity -->
+        <activity
+            android:name="com.evcharging.mobile.ui.APITestActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EVChargingMobile" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.evcharging.mobile.androidx-startup"
@@ -165,11 +171,6 @@
         <uses-library
             android:name="androidx.window.sidecar"
             android:required="false" />
-
-        <service
-            android:name="androidx.room.MultiInstanceInvalidationService"
-            android:directBootAware="true"
-            android:exported="false" />
 
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"

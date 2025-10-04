@@ -3311,6 +3311,7 @@ id accessibility_custom_action_9
 id actionDown
 id actionDownUp
 id actionUp
+id action_api_test
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -3816,6 +3817,7 @@ id tv_customer_name
 id tv_occupied_slots
 id tv_operating_hours
 id tv_pending_count
+id tv_result
 id tv_selected_date
 id tv_selected_station
 id tv_selected_time
@@ -3989,6 +3991,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_api_test
 layout activity_auth
 layout activity_create_booking
 layout activity_dashboard

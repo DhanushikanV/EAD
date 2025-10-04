@@ -1,9 +1,5 @@
 package com.evcharging.mobile.db.entities;
 
-import androidx.annotation.NonNull;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
 /**
  * UserLocal Entity
  * 
@@ -13,11 +9,8 @@ import androidx.room.PrimaryKey;
  * @author EV Charging Mobile Team
  * @version 1.0
  */
-@Entity(tableName = "user_local")
 public class UserLocal {
     
-    @PrimaryKey
-    @NonNull
     private String nic;
     private String name;
     private String email;

@@ -85,6 +85,7 @@ drawable nav_header_background
 drawable qr_code_background
 drawable scanner_overlay
 drawable search_background
+id action_api_test
 id action_logout
 id action_refresh
 id action_settings
@@ -146,6 +147,7 @@ id tv_customer_name
 id tv_occupied_slots
 id tv_operating_hours
 id tv_pending_count
+id tv_result
 id tv_selected_date
 id tv_selected_station
 id tv_selected_time
@@ -166,6 +168,7 @@ id tv_user_email_detail
 id tv_user_name
 id tv_user_name_detail
 id tv_user_phone_detail
+layout activity_api_test
 layout activity_auth
 layout activity_create_booking
 layout activity_dashboard

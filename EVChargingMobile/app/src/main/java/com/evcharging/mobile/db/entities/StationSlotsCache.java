@@ -1,8 +1,5 @@
 package com.evcharging.mobile.db.entities;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
 /**
  * StationSlotsCache Entity
  * 
@@ -12,10 +9,8 @@ import androidx.room.PrimaryKey;
  * @author EV Charging Mobile Team
  * @version 1.0
  */
-@Entity(tableName = "station_slots_cache")
 public class StationSlotsCache {
     
-    @PrimaryKey(autoGenerate = true)
     private int id;
     private String stationId;
     private String date;

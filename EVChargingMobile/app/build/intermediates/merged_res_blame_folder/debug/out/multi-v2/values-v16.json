@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.evcharging.mobile.app-mergeDebugResources-52:/values-v16/values-v16.xml",
+            "outputFile": "com.evcharging.mobile.app-mergeDebugResources-49:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/dhanushikan/.gradle/caches/8.14.3/transforms/431a7ae722dd5404d8a8e4a787daa3fb/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
+                    "source": "/Users/dhanushikan/.gradle/caches/transforms-3/44fc53ad3ef1477fcc7b5dbdbf1cb4c0/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/dhanushikan/.gradle/caches/8.14.3/transforms/a4359aa5a0b64e6f24a0a3f6f6e8299a/transformed/core-1.12.0/res/values-v16/values-v16.xml",
+                    "source": "/Users/dhanushikan/.gradle/caches/transforms-3/f941e5c6c463ac198a80eb6c6159eb7a/transformed/core-1.12.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

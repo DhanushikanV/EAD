@@ -1,9 +1,5 @@
 package com.evcharging.mobile.db.entities;
 
-import androidx.annotation.NonNull;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
 /**
  * BookingLocal Entity
  * 
@@ -13,11 +9,8 @@ import androidx.room.PrimaryKey;
  * @author EV Charging Mobile Team
  * @version 1.0
  */
-@Entity(tableName = "bookings_local")
 public class BookingLocal {
     
-    @PrimaryKey
-    @NonNull
     private String bookingId;
     private String nic; // EV Owner NIC
     private String stationId;

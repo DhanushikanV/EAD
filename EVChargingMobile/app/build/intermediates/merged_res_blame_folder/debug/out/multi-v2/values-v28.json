@@ -1,29 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.evcharging.mobile.app-mergeDebugResources-52:/values-v28/values-v28.xml",
+            "outputFile": "com.evcharging.mobile.app-mergeDebugResources-49:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "/Users/dhanushikan/.gradle/caches/8.14.3/transforms/431a7ae722dd5404d8a8e4a787daa3fb/transformed/appcompat-1.6.1/res/values-v28/values-v28.xml",
-                    "from": {
-                        "startLines": "2,3,4,8",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,130,217,397",
-                        "endLines": "2,3,7,11",
-                        "endColumns": "74,86,12,12",
-                        "endOffsets": "125,212,392,584"
-                    },
-                    "to": {
-                        "startLines": "14,15,16,20",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "1141,1216,1303,1483",
-                        "endLines": "14,15,19,23",
-                        "endColumns": "74,86,12,12",
-                        "endOffsets": "1211,1298,1478,1670"
-                    }
-                },
-                {
-                    "source": "/Users/dhanushikan/.gradle/caches/8.14.3/transforms/d50c7a0037a601e0ed4be6e7f1f41451/transformed/material-1.10.0/res/values-v28/values-v28.xml",
+                    "source": "/Users/dhanushikan/.gradle/caches/transforms-3/31fc64d35410be5bbea9dbaeafbe9ddf/transformed/material-1.10.0/res/values-v28/values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -39,6 +20,25 @@
                         "endLines": "2,3,4,5,6,7,8,9,10,11,12,13,27",
                         "endColumns": "97,94,94,97,87,87,87,87,86,86,86,86,10",
                         "endOffsets": "148,243,338,436,524,612,700,788,875,962,1049,1136,1957"
+                    }
+                },
+                {
+                    "source": "/Users/dhanushikan/.gradle/caches/transforms-3/44fc53ad3ef1477fcc7b5dbdbf1cb4c0/transformed/appcompat-1.6.1/res/values-v28/values-v28.xml",
+                    "from": {
+                        "startLines": "2,3,4,8",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,130,217,397",
+                        "endLines": "2,3,7,11",
+                        "endColumns": "74,86,12,12",
+                        "endOffsets": "125,212,392,584"
+                    },
+                    "to": {
+                        "startLines": "14,15,16,20",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "1141,1216,1303,1483",
+                        "endLines": "14,15,19,23",
+                        "endColumns": "74,86,12,12",
+                        "endOffsets": "1211,1298,1478,1670"
                     }
                 }
             ]

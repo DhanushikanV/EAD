@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.evcharging.mobile.app-mergeDebugResources-52:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+            "outputFile": "com.evcharging.mobile.app-mergeDebugResources-49:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/dhanushikan/.gradle/caches/8.14.3/transforms/d50c7a0037a601e0ed4be6e7f1f41451/transformed/material-1.10.0/res/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+                    "source": "/Users/dhanushikan/.gradle/caches/transforms-3/31fc64d35410be5bbea9dbaeafbe9ddf/transformed/material-1.10.0/res/values-h360dp-land-v13/values-h360dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

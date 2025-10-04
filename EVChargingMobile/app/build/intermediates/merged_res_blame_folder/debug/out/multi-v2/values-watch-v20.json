@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.evcharging.mobile.app-mergeDebugResources-52:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.evcharging.mobile.app-mergeDebugResources-49:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/Users/dhanushikan/.gradle/caches/8.14.3/transforms/431a7ae722dd5404d8a8e4a787daa3fb/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/Users/dhanushikan/.gradle/caches/transforms-3/44fc53ad3ef1477fcc7b5dbdbf1cb4c0/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
