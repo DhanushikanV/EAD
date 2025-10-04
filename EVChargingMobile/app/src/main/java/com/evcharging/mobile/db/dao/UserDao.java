@@ -97,3 +97,4 @@ public interface UserDao {
     @Query("UPDATE user_local SET lastSyncAt = :lastSyncAt WHERE nic = :nic")
     void updateLastSync(String nic, long lastSyncAt);
 }
+

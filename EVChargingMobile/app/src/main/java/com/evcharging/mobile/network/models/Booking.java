@@ -106,3 +106,4 @@ public class Booking {
         this.createdAt = createdAt;
     }
 }
+

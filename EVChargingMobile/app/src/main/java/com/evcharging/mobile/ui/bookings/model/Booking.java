@@ -34,3 +34,4 @@ public class Booking {
     public void setStatus(String status) { this.status = status; }
     public void setType(String type) { this.type = type; }
 }
+

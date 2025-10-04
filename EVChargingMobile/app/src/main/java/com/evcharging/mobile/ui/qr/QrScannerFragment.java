@@ -184,3 +184,4 @@ public class QrScannerFragment extends Fragment {
         isScanning = false;
     }
 }
+

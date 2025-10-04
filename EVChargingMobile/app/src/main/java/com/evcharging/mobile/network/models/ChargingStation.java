@@ -161,3 +161,4 @@ public class ChargingStation {
         this.longitude = longitude;
     }
 }
+

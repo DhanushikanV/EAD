@@ -114,3 +114,4 @@ public interface StationDao {
     @Query("UPDATE stations_cache SET availableSlots = :availableSlots, lastUpdated = :lastUpdated WHERE stationId = :stationId")
     void updateStationAvailability(String stationId, int availableSlots, long lastUpdated);
 }
+

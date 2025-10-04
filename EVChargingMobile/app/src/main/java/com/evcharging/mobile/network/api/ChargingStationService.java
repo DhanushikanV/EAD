@@ -83,3 +83,4 @@ public interface ChargingStationService {
             @Query("date") String date
     );
 }
+

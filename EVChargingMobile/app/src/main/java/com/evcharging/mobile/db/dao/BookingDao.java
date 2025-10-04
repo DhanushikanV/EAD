@@ -159,3 +159,4 @@ public interface BookingDao {
     @Query("UPDATE bookings_local SET qrPayload = :qrPayload, updatedAt = :updatedAt WHERE bookingId = :bookingId")
     void updateBookingQRPayload(String bookingId, String qrPayload, long updatedAt);
 }
+

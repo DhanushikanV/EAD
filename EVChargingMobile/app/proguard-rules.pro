@@ -41,3 +41,4 @@
 
 # Keep utility classes
 -keep class com.evcharging.mobile.utils.** { *; }
+

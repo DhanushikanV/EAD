@@ -220,3 +220,4 @@ public class SharedPreferencesManager {
         editor.apply();
     }
 }
+

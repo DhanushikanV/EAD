@@ -3,3 +3,4 @@
     <background android:drawable="@color/primary_color"/>
     <foreground android:drawable="@drawable/ic_ev_charging"/>
 </adaptive-icon>
+

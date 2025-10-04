@@ -57,3 +57,4 @@ public interface EVOwnerService {
     @POST("evowner/{nic}/reactivate")
     Call<Void> reactivateOwner(@Path("nic") String nic);
 }
+

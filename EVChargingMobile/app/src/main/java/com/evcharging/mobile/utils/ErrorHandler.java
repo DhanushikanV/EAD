@@ -162,3 +162,4 @@ public class ErrorHandler {
         android.util.Log.e(tag, "Error occurred", throwable);
     }
 }
+
