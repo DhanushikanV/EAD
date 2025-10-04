@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    style="@style/CardStyle">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Station Name and Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tv_station_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Station Name"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:id="@+id/tv_station_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Operational"
+                android:textSize="12sp"
+                android:textColor="@color/status_approved"
+                android:background="@drawable/availability_background_available"
+                android:padding="4dp" />
+
+        </LinearLayout>
+
+        <!-- Station Type -->
+        <TextView
+            android:id="@+id/tv_station_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AC Fast Charging"
+            android:textSize="14sp"
+            android:textColor="@color/primary_color"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Address -->
+        <TextView
+            android:id="@+id/tv_station_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Station Address"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Available Slots -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_charging"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tv_station_slots"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="2/4 slots available"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_select_station"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                style="@style/PrimaryButton"
+                android:text="Select"
+                android:textSize="12sp"
+                android:minWidth="80dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

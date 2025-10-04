@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Semi-transparent background -->
+    <item android:drawable="@color/overlay_color" />
+    
+    <!-- Clear scanning area -->
+    <item android:top="200dp" android:bottom="200dp" android:left="50dp" android:right="50dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="2dp" android:color="@color/primary_color" />
+        </shape>
+    </item>
+</layer-list>

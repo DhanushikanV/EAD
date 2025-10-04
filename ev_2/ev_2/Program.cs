@@ -9,6 +9,55 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// -------------------- Load .env and map to configuration --------------------
+// Simple .env loader (KEY=VALUE, ignores lines starting with '#')
+var envFilePath = Path.Combine(AppContext.BaseDirectory, ".env");
+var projectDirEnvPath = Path.Combine(Directory.GetCurrentDirectory(), ".env");
+if (!File.Exists(envFilePath) && File.Exists(projectDirEnvPath))
+{
+    envFilePath = projectDirEnvPath;
+}
+if (File.Exists(envFilePath))
+{
+    foreach (var rawLine in File.ReadAllLines(envFilePath))
+    {
+        var line = rawLine.Trim();
+        if (string.IsNullOrWhiteSpace(line) || line.StartsWith("#")) continue;
+        var equalsIndex = line.IndexOf('=');
+        if (equalsIndex <= 0) continue;
+        var key = line.Substring(0, equalsIndex).Trim();
+        var value = line.Substring(equalsIndex + 1).Trim();
+        Environment.SetEnvironmentVariable(key, value);
+    }
+
+    // Map flat env vars to strongly-typed configuration keys used by the app
+    void SetIfPresent(string configKey, string envKey)
+    {
+        var value = Environment.GetEnvironmentVariable(envKey);
+        if (!string.IsNullOrEmpty(value))
+        {
+            builder.Configuration[configKey] = value;
+        }
+    }
+
+    // MongoDB
+    SetIfPresent("MongoDBSettings:ConnectionString", "MONGODB_CONNECTION_STRING");
+    SetIfPresent("MongoDBSettings:DatabaseName", "MONGODB_DATABASE_NAME");
+    SetIfPresent("MongoDBSettings:BookingCollectionName", "MONGODB_BOOKING_COLLECTION");
+    SetIfPresent("MongoDBSettings:ChargingStationCollectionName", "MONGODB_CHARGING_STATION_COLLECTION");
+    SetIfPresent("MongoDBSettings:EVOwnerCollectionName", "MONGODB_EV_OWNER_COLLECTION");
+    SetIfPresent("MongoDBSettings:UserCollectionName", "MONGODB_USER_COLLECTION");
+
+    // JWT
+    SetIfPresent("JwtSettings:Secret", "JWT_SECRET");
+    SetIfPresent("JwtSettings:Issuer", "JWT_ISSUER");
+    SetIfPresent("JwtSettings:Audience", "JWT_AUDIENCE");
+    SetIfPresent("JwtSettings:ExpiryMinutes", "JWT_EXPIRY_MINUTES");
+
+    // CORS
+    SetIfPresent("CORS_ALLOWED_ORIGINS", "CORS_ALLOWED_ORIGINS");
+}
+
 // -------------------- MongoDB settings --------------------
 builder.Services.Configure<DatabaseSettings>(
     builder.Configuration.GetSection("MongoDBSettings")

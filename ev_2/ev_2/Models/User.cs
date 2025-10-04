@@ -18,6 +18,9 @@ namespace EV_2.Models
 
         [BsonElement("PasswordHash")]
         public string PasswordHash { get; set; } = null!;
+        
+        // Temporary field for signup (will be hashed into PasswordHash)
+        public string? Password { get; set; }
 
         [BsonElement("Role")]
         public string Role { get; set; } = "Backoffice";

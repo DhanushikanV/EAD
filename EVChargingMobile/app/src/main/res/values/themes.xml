@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Theme.EVChargingMobile" parent="Theme.MaterialComponents.DayNight">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+        
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/secondary_color</item>
+        <item name="colorSecondaryVariant">@color/secondary_dark</item>
+        <item name="colorOnSecondary">@color/text_white</item>
+        
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background_color</item>
+        <item name="colorSurface">@color/surface_color</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        
+        <!-- Status bar -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/primary_dark</item>
+        
+        <!-- Action bar -->
+        <item name="android:actionBarStyle">@style/CustomActionBar</item>
+        
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        
+        <!-- Error color -->
+        <item name="colorError">@color/error_color</item>
+    </style>
+
+    <!-- Splash screen theme -->
+    <style name="Theme.EVChargingMobile.Splash" parent="Theme.EVChargingMobile">
+        <item name="android:windowBackground">@color/primary_color</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/primary_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+
+    <!-- Custom Action Bar -->
+    <style name="CustomActionBar" parent="Widget.MaterialComponents.ActionBar.Primary">
+        <item name="android:background">@color/primary_color</item>
+        <item name="titleTextColor">@color/text_white</item>
+        <item name="subtitleTextColor">@color/text_white</item>
+    </style>
+
+    <!-- Button Styles -->
+    <style name="PrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/button_primary_background</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+    </style>
+
+    <style name="SecondaryButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="strokeColor">@color/primary_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+    </style>
+
+    <!-- Card Styles -->
+    <style name="CardStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/card_background</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <!-- Text Input Styles -->
+    <style name="TextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/primary_color</item>
+        <item name="hintTextColor">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+    </style>
+
+    <!-- Status Chip Styles -->
+    <style name="StatusChipPending">
+        <item name="android:background">@color/status_pending</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="StatusChipApproved">
+        <item name="android:background">@color/status_approved</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="StatusChipCancelled">
+        <item name="android:background">@color/status_cancelled</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="StatusChipCompleted">
+        <item name="android:background">@color/status_completed</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+</resources>
