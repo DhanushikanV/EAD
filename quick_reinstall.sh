@@ -35,9 +35,18 @@ echo "🛑 Stopping any running backend processes..."
 pkill -f "dotnet run" 2>/dev/null || true
 sleep 2
 
-# Step 2: Start backend
-echo "🔧 Starting backend..."
+# Step 2: Build and start backend
+echo "🔧 Building and starting backend..."
 cd ev_2/ev_2
+
+# Build first to catch any errors
+echo "   Building backend..."
+dotnet build > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+    echo "❌ Backend build failed! Please check for compilation errors."
+    exit 1
+fi
+
 MONGODB_CONNECTION_STRING="mongodb://localhost:27017" \
 MONGODB_DATABASE_NAME="EVChargingDB" \
 JWT_SECRET="YourSuperSecureSecretKeyThatIsAtLeast32CharactersLongForDevelopment!" \

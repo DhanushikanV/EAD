@@ -25,7 +25,7 @@ namespace EV_2.Services
             await _bookingCollection.Find(b => b.Id == id).FirstOrDefaultAsync();
 
         public async Task<List<Booking>> GetByEvOwnerNICAsync(string evOwnerNIC) =>
-            await _bookingCollection.Find(b => b.EvOwnerNIC == evOwnerNIC).ToListAsync();
+            await _bookingCollection.Find(b => b.EVOwnerNIC == evOwnerNIC).ToListAsync();
 
         public async Task CreateAsync(Booking newBooking) =>
             await _bookingCollection.InsertOneAsync(newBooking);
