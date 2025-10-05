@@ -3363,6 +3363,7 @@ id bestChoice
 id blocking
 id bottom
 id bottom_navigation
+id bottom_navigation_operator
 id bounce
 id bounceBoth
 id bounceEnd
@@ -3613,6 +3614,7 @@ id nav_graph
 id nav_home
 id nav_host_fragment
 id nav_host_fragment_container
+id nav_host_fragment_operator
 id nav_operator_dashboard
 id nav_operator_profile
 id nav_profile
@@ -3626,6 +3628,10 @@ id navigation_bar_item_labels_group
 id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_header_container
+id navigation_operator_bookings
+id navigation_operator_dashboard
+id navigation_operator_profile
+id navigation_operator_scanner
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
@@ -3656,6 +3662,7 @@ id open_search_view_search_prefix
 id open_search_view_status_bar_spacer
 id open_search_view_toolbar
 id open_search_view_toolbar_container
+id operator_nav_graph
 id outline
 id outward
 id overshoot
@@ -3816,6 +3823,7 @@ id tv_booking_type
 id tv_customer_name
 id tv_occupied_slots
 id tv_operating_hours
+id tv_operator_welcome
 id tv_pending_count
 id tv_result
 id tv_selected_date
@@ -3823,6 +3831,7 @@ id tv_selected_station
 id tv_selected_time
 id tv_station_address
 id tv_station_details_info
+id tv_station_info
 id tv_station_location
 id tv_station_name
 id tv_station_name_info
@@ -3997,6 +4006,8 @@ layout activity_create_booking
 layout activity_dashboard
 layout activity_main
 layout activity_maps
+layout activity_operator
+layout activity_operator_simple
 layout activity_splash
 layout activity_station_selection
 layout custom_barcode_scanner
@@ -4103,9 +4114,12 @@ layout zxing_capture
 menu bottom_navigation_menu
 menu dashboard_menu
 menu drawer_navigation_menu
+menu operator_bottom_navigation_menu
+menu operator_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
+navigation operator_nav_graph
 plurals mtrl_badge_content_description
 raw zxing_beep
 string abc_action_bar_home_description

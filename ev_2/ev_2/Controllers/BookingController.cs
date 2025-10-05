@@ -16,10 +16,23 @@ namespace EV_2.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get() => Ok(await _bookingService.GetAsync());
+        public async Task<IActionResult> Get([FromQuery] string? nic = null)
+        {
+            if (!string.IsNullOrEmpty(nic))
+            {
+                // Get bookings for specific user
+                var userBookings = await _bookingService.GetByEvOwnerNICAsync(nic);
+                return Ok(userBookings);
+            }
+            else
+            {
+                // Get all bookings
+                return Ok(await _bookingService.GetAsync());
+            }
+        }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(string id)
+        public async Task<IActionResult> GetById(string id)
         {
             var booking = await _bookingService.GetAsync(id);
             return booking is null ? NotFound() : Ok(booking);
@@ -29,7 +42,7 @@ namespace EV_2.Controllers
         public async Task<IActionResult> Create(Booking newBooking)
         {
             await _bookingService.CreateAsync(newBooking);
-            return CreatedAtAction(nameof(Get), new { id = newBooking.Id }, newBooking);
+            return CreatedAtAction(nameof(GetById), new { id = newBooking.Id }, newBooking);
         }
 
         [HttpPut("{id}")]

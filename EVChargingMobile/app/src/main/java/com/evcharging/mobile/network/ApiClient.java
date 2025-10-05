@@ -27,9 +27,10 @@ public class ApiClient {
 
     // TODO: Replace with your actual backend URL
     // Backend API Configuration - Load from environment
+    // Using host machine IP for emulator connection
     private static final String BASE_URL = System.getenv("BACKEND_API_URL") != null ? 
-        System.getenv("BACKEND_API_URL") : "http://localhost:5263/api/";
-    // Using localhost with adb port forwarding
+        System.getenv("BACKEND_API_URL") : "http://192.168.8.113:5263/api/";
+    // For emulator to connect to host machine backend
     
     private static Retrofit retrofit;
     private static SharedPreferencesManager preferencesManager;

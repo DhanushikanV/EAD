@@ -25,7 +25,7 @@
         <!-- Google Maps API Key - Load from environment -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${GOOGLE_MAPS_API_KEY}" />
+            android:value="AIzaSyDummyKeyForTesting123456789" />
 
         <!-- Main Activity -->
         <activity

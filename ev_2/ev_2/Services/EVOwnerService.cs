@@ -23,6 +23,10 @@ namespace EV_2.Services
         public async Task<EVOwner?> GetAsync(string nic) =>
             await _owners.Find(o => o.NIC == nic).FirstOrDefaultAsync();
 
+        // Get a specific EVOwner by Email
+        public async Task<EVOwner?> GetByEmailAsync(string email) =>
+            await _owners.Find(o => o.Email == email).FirstOrDefaultAsync();
+
         // Create a new EVOwner
         public async Task CreateAsync(EVOwner newOwner) =>
             await _owners.InsertOneAsync(newOwner);

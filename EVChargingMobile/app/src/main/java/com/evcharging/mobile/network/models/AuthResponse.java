@@ -62,17 +62,11 @@ public class AuthResponse {
         @Json(name = "id")
         private String id;
         
-        @Json(name = "nic")
-        private String nic;
-        
-        @Json(name = "name")
-        private String name;
+        @Json(name = "username")
+        private String username;
         
         @Json(name = "email")
         private String email;
-        
-        @Json(name = "phone")
-        private String phone;
         
         @Json(name = "role")
         private String role;
@@ -89,13 +83,10 @@ public class AuthResponse {
         /**
          * Constructor with parameters
          */
-        public UserInfo(String id, String nic, String name, String email, 
-                       String phone, String role, String status) {
+        public UserInfo(String id, String username, String email, String role, String status) {
             this.id = id;
-            this.nic = nic;
-            this.name = name;
+            this.username = username;
             this.email = email;
-            this.phone = phone;
             this.role = role;
             this.status = status;
         }
@@ -109,20 +100,12 @@ public class AuthResponse {
             this.id = id;
         }
 
-        public String getNic() {
-            return nic;
+        public String getUsername() {
+            return username;
         }
 
-        public void setNic(String nic) {
-            this.nic = nic;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
+        public void setUsername(String username) {
+            this.username = username;
         }
 
         public String getEmail() {
@@ -131,14 +114,6 @@ public class AuthResponse {
 
         public void setEmail(String email) {
             this.email = email;
-        }
-
-        public String getPhone() {
-            return phone;
-        }
-
-        public void setPhone(String phone) {
-            this.phone = phone;
         }
 
         public String getRole() {

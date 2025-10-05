@@ -127,7 +127,8 @@ public class SignupFragment extends Fragment {
         signupRequest.setName(name);
         signupRequest.setEmail(email);
         signupRequest.setPhone(phone);
-        signupRequest.setPasswordHash(password); // Backend expects this field
+        // Send plain text password - backend will hash it
+        signupRequest.setPasswordHash(password);
         signupRequest.setStatus("Active");
         
         // Add default EV model

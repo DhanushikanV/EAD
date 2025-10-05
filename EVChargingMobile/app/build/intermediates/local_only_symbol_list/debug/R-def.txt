@@ -91,6 +91,7 @@ id action_refresh
 id action_settings
 id barcode_scanner
 id bottom_navigation
+id bottom_navigation_operator
 id btn_approve
 id btn_back
 id btn_cancel
@@ -125,12 +126,18 @@ id nav_bookings
 id nav_graph
 id nav_home
 id nav_host_fragment
+id nav_host_fragment_operator
 id nav_operator_dashboard
 id nav_operator_profile
 id nav_profile
 id nav_qr_scanner
 id nav_stations
 id nav_today_bookings
+id navigation_operator_bookings
+id navigation_operator_dashboard
+id navigation_operator_profile
+id navigation_operator_scanner
+id operator_nav_graph
 id recycler_view_bookings
 id recycler_view_stations
 id recycler_view_today_bookings
@@ -146,6 +153,7 @@ id tv_booking_type
 id tv_customer_name
 id tv_occupied_slots
 id tv_operating_hours
+id tv_operator_welcome
 id tv_pending_count
 id tv_result
 id tv_selected_date
@@ -153,6 +161,7 @@ id tv_selected_station
 id tv_selected_time
 id tv_station_address
 id tv_station_details_info
+id tv_station_info
 id tv_station_location
 id tv_station_name
 id tv_station_name_info
@@ -174,6 +183,8 @@ layout activity_create_booking
 layout activity_dashboard
 layout activity_main
 layout activity_maps
+layout activity_operator
+layout activity_operator_simple
 layout activity_splash
 layout activity_station_selection
 layout custom_barcode_scanner
@@ -199,9 +210,12 @@ layout nav_header
 menu bottom_navigation_menu
 menu dashboard_menu
 menu drawer_navigation_menu
+menu operator_bottom_navigation_menu
+menu operator_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph
+navigation operator_nav_graph
 string account
 string active_bookings
 string active_sessions

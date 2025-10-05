@@ -45,4 +45,13 @@ public interface AuthService {
      */
     @POST("user/login")
     Call<AuthResponse> operatorLogin(@Body LoginRequest request);
+
+    /**
+     * EV Owner login endpoint
+     * 
+     * @param request Login request containing email and password
+     * @return Call<AuthResponse> containing JWT token and EV owner info
+     */
+    @POST("EVOwner/login")
+    Call<AuthResponse> evOwnerLogin(@Body LoginRequest request);
 }
