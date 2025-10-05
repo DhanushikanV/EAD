@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../../../services/api';
 
 const OperatorBookingsTable = () => {
   const [bookingList, setBookingList] = useState([]);
@@ -7,11 +7,12 @@ const OperatorBookingsTable = () => {
   const [loading, setLoading] = useState(true);
   const [loadingIds, setLoadingIds] = useState([]); // tracks bookings being updated
   const [errorMessage, setErrorMessage] = useState('');
+  const [stationIdToName, setStationIdToName] = useState({});
 
   // Fetch bookings from backend
   const fetchBooking = async () => {
     try {
-      const response = await axios.get("http://localhost:5263/api/Booking");
+      const response = await api.get("/Booking");
       console.log("Bookings from API:", response.data);
 
       // ✅ save data into state
@@ -25,42 +26,55 @@ const OperatorBookingsTable = () => {
     }
   };
 
+  const fetchStations = async () => {
+    try {
+      const res = await api.get('/ChargingStation');
+      const map = {};
+      (res.data || []).forEach(station => {
+        if (station && station.id) {
+          map[station.id] = station.name || station.Name || `Station ${station.id}`;
+        }
+      });
+      setStationIdToName(map);
+    } catch (err) {
+      console.error('Failed to fetch stations:', err);
+    }
+  };
+
   useEffect(() => {
     fetchBooking();
+    fetchStations();
   }, []);
 
-  const updateBookingStatus = async (bookingId, status) => {
+  const handleConfirm = async (bookingId) => {
     try {
-      const booking = bookingList.find(b => b.id === bookingId);
-      if (!booking) return;
-
       setLoadingIds(prev => [...prev, bookingId]);
-
-      const updatedBooking = { ...booking, status };
-      await axios.put(`http://localhost:5263/api/Booking/${bookingId}`, updatedBooking);
-
-      setBookingList(prev => prev.map(b => (b.id === bookingId ? updatedBooking : b)));
+      const res = await api.put(`/Booking/${bookingId}/confirm`);
+      if (res.status !== 200) {
+        const msg = res.data?.error || 'Confirm failed';
+        setErrorMessage(msg);
+      }
+      await fetchBooking();
     } catch (error) {
-      console.error(`Error updating booking ${status}:`, error);
-      setErrorMessage(`Failed to ${status.toLowerCase()} booking.`);
+      const msg = error?.response?.data?.error || 'Confirm failed';
+      setErrorMessage(msg);
     } finally {
       setLoadingIds(prev => prev.filter(id => id !== bookingId));
     }
   };
 
-  const handleConfirm = bookingId => updateBookingStatus(bookingId, 'Confirmed');
-  const handleCancel = bookingId => updateBookingStatus(bookingId, 'Cancelled');
-  const handleReset = async bookingId => {
+  const handleCancel = async (bookingId) => {
     try {
-      const originalBooking = originalList.find(b => b.id === bookingId);
-      if (!originalBooking) return;
-
       setLoadingIds(prev => [...prev, bookingId]);
-      await axios.put(`http://localhost:5263/api/Booking/${bookingId}`, originalBooking);
-      setBookingList(prev => prev.map(b => (b.id === bookingId ? originalBooking : b)));
+      const res = await api.put(`/Booking/${bookingId}/cancel`);
+      if (res.status !== 204) {
+        const msg = res.data?.error || 'Cancel failed';
+        setErrorMessage(msg);
+      }
+      await fetchBooking();
     } catch (error) {
-      console.error('Error resetting booking:', error);
-      setErrorMessage('Failed to reset booking.');
+      const msg = error?.response?.data?.error || 'Cancel failed';
+      setErrorMessage(msg);
     } finally {
       setLoadingIds(prev => prev.filter(id => id !== bookingId));
     }
@@ -98,8 +112,8 @@ const OperatorBookingsTable = () => {
             return (
               <tr key={booking.id} className="border-b hover:bg-gray-50">
                 <td className="p-3">{booking.id}</td>
-                <td className="p-3">{booking.eVOwnerNIC}</td>
-                <td className="p-3">{booking.stationId}</td>
+                <td className="p-3">{booking.evOwnerNIC}</td>
+                <td className="p-3">{stationIdToName[booking.stationId] || booking.stationId}</td>
                 <td className="p-3">{new Date(booking.reservationDateTime).toLocaleString()}</td>
                 <td className="p-3">{booking.status}</td>
                 <td className="p-3 flex gap-2">
@@ -125,13 +139,7 @@ const OperatorBookingsTable = () => {
                   >
                     {isLoading && booking.status === 'Pending' ? '...' : 'Cancel'}
                   </button>
-                  <button
-                    onClick={() => handleReset(booking.id)}
-                    disabled={isLoading}
-                    className="px-2 py-1 rounded bg-gray-600 text-white hover:bg-gray-700"
-                  >
-                    {isLoading ? '...' : 'Reset'}
-                  </button>
+                  
                 </td>
               </tr>
             );

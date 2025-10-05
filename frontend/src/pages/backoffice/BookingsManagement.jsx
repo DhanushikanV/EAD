@@ -8,9 +8,11 @@ const BookingsManagement = () => {
   const [editingBookingId, setEditingBookingId] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState("");
   const [viewMode, setViewMode] = useState("table"); // toggle between 'table' and 'card'
+  const [stationIdToName, setStationIdToName] = useState({});
 
   useEffect(() => {
     fetchBookings();
+    fetchStations();
   }, []);
 
   const fetchBookings = async () => {
@@ -51,6 +53,21 @@ const BookingsManagement = () => {
     }
   };
 
+  const fetchStations = async () => {
+    try {
+      const res = await axios.get("http://localhost:5263/api/ChargingStation");
+      const map = {};
+      (res.data || []).forEach((s) => {
+        if (s && s.id) {
+          map[s.id] = s.name || s.Name || `Station ${s.id}`;
+        }
+      });
+      setStationIdToName(map);
+    } catch (err) {
+      console.error("Error fetching stations:", err);
+    }
+  };
+
   return (
     <div>
       <div className="flex justify-between items-center mb-4">
@@ -68,6 +85,7 @@ const BookingsManagement = () => {
       ) : viewMode === "table" ? (
         <BookingsTable
           bookings={bookings}
+          stationIdToName={stationIdToName}
           onEdit={(booking) => {
             setEditingBookingId(booking.id);
             setSelectedStatus(booking.status);

@@ -32,6 +32,8 @@ public class QrGeneratorFragment extends Fragment {
     private TextView tvBookingInfo;
     private Button btnShareQr;
     private Booking booking;
+    private String argBookingId;
+    private String argQrToken;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, 
@@ -40,6 +42,12 @@ public class QrGeneratorFragment extends Fragment {
         
         initializeViews(view);
         setupClickListeners(view);
+        // read args from navigation
+        Bundle args = getArguments();
+        if (args != null) {
+            argBookingId = args.getString("bookingId", null);
+            argQrToken = args.getString("qrToken", null);
+        }
         generateQrCode();
         
         return view;
@@ -60,12 +68,14 @@ public class QrGeneratorFragment extends Fragment {
     }
 
     private void generateQrCode() {
-        // Get booking from arguments or create mock booking
-        booking = getMockBooking();
-        
-        if (booking != null) {
+        if (argBookingId != null && argQrToken != null) {
+            // minimal booking wrapper for display
+            booking = new Booking(argBookingId, "", "", "Confirmed", "");
+            booking.setQrToken(argQrToken);
             displayBookingInfo();
             generateQrBitmap();
+        } else {
+            Toast.makeText(getContext(), "QR not available", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -80,14 +90,10 @@ public class QrGeneratorFragment extends Fragment {
 
     private void generateQrBitmap() {
         try {
-            // Create QR data JSON
+            // Create QR data JSON (backend expects bookingId + qrToken)
             JSONObject qrData = new JSONObject();
-            qrData.put("type", "booking");
             qrData.put("bookingId", booking.getId());
-            qrData.put("stationName", booking.getStationName());
-            qrData.put("dateTime", booking.getDateTime());
-            qrData.put("status", booking.getStatus());
-            qrData.put("timestamp", System.currentTimeMillis());
+            qrData.put("qrToken", booking.getQrToken());
 
             // Generate QR code
             QRCodeWriter writer = new QRCodeWriter();
@@ -112,8 +118,5 @@ public class QrGeneratorFragment extends Fragment {
         }
     }
 
-    private Booking getMockBooking() {
-        // Mock booking for demonstration
-        return new Booking("BK001", "Colombo Fort Station", "2024-01-15 14:00", "Approved", "Active");
-    }
+    // No mock booking in production
 }

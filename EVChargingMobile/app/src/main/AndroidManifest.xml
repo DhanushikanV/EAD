@@ -49,6 +49,13 @@
             android:theme="@style/Theme.EVChargingMobile" />
 
 
+        <!-- Operator Activity -->
+        <activity
+            android:name=".ui.OperatorActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EVChargingMobile" />
+
+
             <!-- Dashboard Activity -->
             <activity
                 android:name=".ui.dashboard.DashboardActivity"

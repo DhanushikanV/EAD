@@ -28,8 +28,8 @@ public interface OperatorService {
      * @param qrData QR code payload data
      * @return Call<Booking> containing booking details from QR code
      */
-    @POST("operator/scan")
-    Call<Booking> scanQRCode(@Body QRScanRequest qrData);
+    @POST("Booking/operator/scan")
+    Call<ScanResponse> scanQRCode(@Body ScanRequest qrData);
 
     /**
      * Get today's bookings for a station
@@ -50,7 +50,7 @@ public interface OperatorService {
      * @param bookingId Booking ID
      * @return Call<Void> for session start confirmation
      */
-    @POST("operator/booking/{id}/start")
+    @POST("Booking/operator/bookings/{id}/start")
     Call<Void> startSession(@Path("id") String bookingId);
 
     /**
@@ -59,8 +59,8 @@ public interface OperatorService {
      * @param bookingId Booking ID
      * @return Call<Void> for session end confirmation
      */
-    @POST("operator/booking/{id}/end")
-    Call<Void> endSession(@Path("id") String bookingId);
+    @POST("Booking/operator/bookings/{id}/finalize")
+    Call<Void> finalizeSession(@Path("id") String bookingId);
 
     /**
      * Update station slot availability
@@ -78,20 +78,20 @@ public interface OperatorService {
     /**
      * QR Scan Request Model
      */
-    class QRScanRequest {
-        private String qrPayload;
+    class ScanRequest {
+        private String qrToken;
 
-        public QRScanRequest(String qrPayload) {
-            this.qrPayload = qrPayload;
-        }
+        public ScanRequest(String qrToken) { this.qrToken = qrToken; }
+        public String getQrToken() { return qrToken; }
+        public void setQrToken(String qrToken) { this.qrToken = qrToken; }
+    }
 
-        public String getQrPayload() {
-            return qrPayload;
-        }
-
-        public void setQrPayload(String qrPayload) {
-            this.qrPayload = qrPayload;
-        }
+    class ScanResponse {
+        public String message;
+        public String bookingId;
+        public String nic;
+        public String stationId;
+        public String status;
     }
 
     /**

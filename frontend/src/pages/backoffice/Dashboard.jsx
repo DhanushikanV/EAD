@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from '../../components/common/Card';
 import axios from "axios";
 import Map from '../../components/maps/Map'; // make sure this path points to your Map component
-import { LoadScript } from "@react-google-maps/api";
+import { useJsApiLoader } from "@react-google-maps/api";
 
 const DashboardBackoffice = () => {
   const [dashboard, setDashboard] = useState({
@@ -15,6 +15,10 @@ const DashboardBackoffice = () => {
   const [stations, setStations] = useState([]);
 
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey,
+  });
 
   const apiBaseUsers = 'http://localhost:5263/api/User';
   const apiBaseOwners = 'http://localhost:5263/api/EVOwner';
@@ -58,9 +62,7 @@ const DashboardBackoffice = () => {
     <div className="space-y-6">
 
       <div className="h-96 w-full">
-        <LoadScript googleMapsApiKey={googleMapsApiKey}>
-      <Map stations={stations} />
-    </LoadScript>
+        {isLoaded ? <Map stations={stations} /> : <div>Loading map…</div>}
       </div>
      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
   <Card title="Total Users" value={dashboard.totalUsers} type="users" trend={5} />

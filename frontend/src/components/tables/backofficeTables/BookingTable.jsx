@@ -2,6 +2,7 @@ import React from "react";
 
 const BookingsTable = ({
   bookings,
+  stationIdToName = {},
   onEdit,
   onDelete,
   editingBookingId,
@@ -34,7 +35,7 @@ const BookingsTable = ({
             return (
               <tr key={b.id} className="border-b hover:bg-gray-50">
                 <td className="p-3">{b.evOwnerNIC}</td>
-                <td className="p-3">{b.stationId}</td>
+                <td className="p-3">{stationIdToName[b.stationId] || b.stationId}</td>
                 <td className="p-3">{dateStr}</td>
                 <td className="p-3">{timeStr}</td>
                 <td className="p-3">

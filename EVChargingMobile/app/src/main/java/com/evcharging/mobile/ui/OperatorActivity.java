@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Button;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 import com.evcharging.mobile.R;
 import com.evcharging.mobile.utils.SharedPreferencesManager;
@@ -31,6 +33,7 @@ public class OperatorActivity extends AppCompatActivity {
     private void setupViews() {
         TextView tvWelcome = findViewById(R.id.tv_operator_welcome);
         TextView tvStationInfo = findViewById(R.id.tv_station_info);
+        Button btnScan = findViewById(R.id.btn_scan_qr);
         
         String username = prefsManager.getUserName();
         if (username != null && !username.isEmpty()) {
@@ -40,6 +43,19 @@ public class OperatorActivity extends AppCompatActivity {
         }
         
         tvStationInfo.setText("Colombo Fort Charging Station\nStatus: Active\nAvailable Slots: 3/6");
+
+        if (btnScan != null) {
+            btnScan.setOnClickListener(v -> openScanner());
+        }
+    }
+
+    private void openScanner() {
+        // Show scanner fragment full screen
+        com.evcharging.mobile.ui.qr.QrScannerFragment fragment = new com.evcharging.mobile.ui.qr.QrScannerFragment();
+        FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
+        tx.replace(android.R.id.content, fragment);
+        tx.addToBackStack(null);
+        tx.commit();
     }
 
     private void setupActionBar() {

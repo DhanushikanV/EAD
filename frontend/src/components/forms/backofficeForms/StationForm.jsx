@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GoogleMap, Marker, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 
 const StationForm = ({ initialData = null, onSubmit, onCancel }) => {
   const [formData, setFormData] = useState({
@@ -55,6 +55,10 @@ const StationForm = ({ initialData = null, onSubmit, onCancel }) => {
   };
 
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey,
+  });
 
   return (
     <div className="bg-white shadow rounded p-6 max-w-md">
@@ -112,8 +116,7 @@ const StationForm = ({ initialData = null, onSubmit, onCancel }) => {
         )}
 
         {/* Google Map Selector */}
-        {useMap && (
-          <LoadScript googleMapsApiKey={googleMapsApiKey}>
+        {useMap && (isLoaded ? (
             <GoogleMap
               mapContainerStyle={{ width: '100%', height: '300px' }}
               center={{ lat: formData.latitude || 6.9271, lng: formData.longitude || 79.8612 }}
@@ -124,8 +127,7 @@ const StationForm = ({ initialData = null, onSubmit, onCancel }) => {
                 <Marker position={{ lat: formData.latitude, lng: formData.longitude }} />
               )}
             </GoogleMap>
-          </LoadScript>
-        )}
+        ) : <div>Loading map…</div>)}
 
         <div className="flex items-center gap-2 mt-2">
           <button type="button" onClick={() => setUseMap(prev => !prev)} className="px-2 py-1 border rounded">

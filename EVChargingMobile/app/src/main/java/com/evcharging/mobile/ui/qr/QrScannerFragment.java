@@ -17,6 +17,12 @@ import com.journeyapps.barcodescanner.BarcodeCallback;
 import com.journeyapps.barcodescanner.BarcodeResult;
 import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 import org.json.JSONObject;
+import android.content.Context;
+import com.evcharging.mobile.network.ApiClient;
+import com.evcharging.mobile.network.api.OperatorService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * QR Scanner Fragment
@@ -107,19 +113,76 @@ public class QrScannerFragment extends Fragment {
 
     private void handleBookingQr(JSONObject qrJson) {
         String bookingId = qrJson.optString("bookingId", "");
-        String stationId = qrJson.optString("stationId", "");
-        
-        if (!bookingId.isEmpty() && !stationId.isEmpty()) {
-            Toast.makeText(getContext(), 
-                "Booking validated: " + bookingId + " at Station " + stationId, 
-                Toast.LENGTH_LONG).show();
-            
-            // TODO: Validate booking with backend
-            // TODO: Update booking status
-            // TODO: Navigate to appropriate screen
-        } else {
+        String qrToken = qrJson.optString("qrToken", "");
+        if (qrToken.isEmpty()) {
             Toast.makeText(getContext(), "Invalid booking QR code", Toast.LENGTH_SHORT).show();
+            return;
         }
+
+        Context ctx = getContext();
+        if (ctx == null) return;
+        OperatorService service = ApiClient.getRetrofitInstance(ctx).create(OperatorService.class);
+        service.scanQRCode(new OperatorService.ScanRequest(qrToken)).enqueue(new Callback<OperatorService.ScanResponse>() {
+            @Override
+            public void onResponse(Call<OperatorService.ScanResponse> call, Response<OperatorService.ScanResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    Toast.makeText(getContext(), "Valid booking: " + response.body().bookingId, Toast.LENGTH_SHORT).show();
+                    // After successful validation, enable Start action in UI or auto-start
+                    startSession(response.body().bookingId);
+                } else {
+                    Toast.makeText(getContext(), "Scan failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<OperatorService.ScanResponse> call, Throwable t) {
+                Toast.makeText(getContext(), "Scan error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void startSession(String bookingId) {
+        Context ctx = getContext();
+        if (ctx == null) return;
+        OperatorService service = ApiClient.getRetrofitInstance(ctx).create(OperatorService.class);
+        service.startSession(bookingId).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(getContext(), "Session started", Toast.LENGTH_SHORT).show();
+                    // For demo, finalize immediately or navigate to session screen
+                    finalizeSession(bookingId);
+                } else {
+                    Toast.makeText(getContext(), "Start failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Toast.makeText(getContext(), "Start error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void finalizeSession(String bookingId) {
+        Context ctx = getContext();
+        if (ctx == null) return;
+        OperatorService service = ApiClient.getRetrofitInstance(ctx).create(OperatorService.class);
+        service.finalizeSession(bookingId).enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(getContext(), "Session completed", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getContext(), "Finalize failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Toast.makeText(getContext(), "Finalize error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void handleStationQr(JSONObject qrJson) {

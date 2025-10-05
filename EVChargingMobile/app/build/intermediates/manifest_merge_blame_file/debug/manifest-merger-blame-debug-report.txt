@@ -95,7 +95,7 @@
 52-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:44:9-33
 53
 54    <application
-54-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:13:5-100:19
+54-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:13:5-107:19
 55        android:allowBackup="true"
 55-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:14:9-35
 56        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -164,201 +164,211 @@
 91            android:theme="@style/Theme.EVChargingMobile" />
 91-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:49:13-58
 92
-93        <!-- Dashboard Activity -->
+93        <!-- Operator Activity -->
 94        <activity
-94-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:53:13-56:65
-95            android:name="com.evcharging.mobile.ui.dashboard.DashboardActivity"
-95-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:54:17-63
+94-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:53:9-56:61
+95            android:name="com.evcharging.mobile.ui.OperatorActivity"
+95-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:54:13-48
 96            android:exported="false"
-96-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:55:17-41
+96-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:55:13-37
 97            android:theme="@style/Theme.EVChargingMobile" />
-97-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:56:17-62
+97-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:56:13-58
 98
-99        <!-- Create Booking Activity -->
+99        <!-- Dashboard Activity -->
 100        <activity
-100-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:59:13-62:65
-101            android:name="com.evcharging.mobile.ui.CreateBookingActivity"
-101-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:60:17-57
+100-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:60:13-63:65
+101            android:name="com.evcharging.mobile.ui.dashboard.DashboardActivity"
+101-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:61:17-63
 102            android:exported="false"
-102-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:61:17-41
+102-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:62:17-41
 103            android:theme="@style/Theme.EVChargingMobile" />
-103-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:62:17-62
+103-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:63:17-62
 104
-105        <!-- Station Selection Activity -->
+105        <!-- Create Booking Activity -->
 106        <activity
-106-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:65:13-68:65
-107            android:name="com.evcharging.mobile.ui.StationSelectionActivity"
-107-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:66:17-60
+106-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:66:13-69:65
+107            android:name="com.evcharging.mobile.ui.CreateBookingActivity"
+107-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:67:17-57
 108            android:exported="false"
-108-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:67:17-41
+108-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:68:17-41
 109            android:theme="@style/Theme.EVChargingMobile" />
-109-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:68:17-62
+109-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:69:17-62
 110
-111        <!-- Station Details Activity -->
+111        <!-- Station Selection Activity -->
 112        <activity
-112-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:71:9-74:61
-113            android:name="com.evcharging.mobile.ui.stations.StationDetailsActivity"
-113-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:72:13-63
+112-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:72:13-75:65
+113            android:name="com.evcharging.mobile.ui.StationSelectionActivity"
+113-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:73:17-60
 114            android:exported="false"
-114-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:73:13-37
+114-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:74:17-41
 115            android:theme="@style/Theme.EVChargingMobile" />
-115-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:74:13-58
+115-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:75:17-62
 116
-117        <!-- Booking Activity -->
+117        <!-- Station Details Activity -->
 118        <activity
-118-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:77:9-80:61
-119            android:name="com.evcharging.mobile.ui.bookings.BookingActivity"
-119-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:78:13-56
+118-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:78:9-81:61
+119            android:name="com.evcharging.mobile.ui.stations.StationDetailsActivity"
+119-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:79:13-63
 120            android:exported="false"
-120-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:79:13-37
+120-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:80:13-37
 121            android:theme="@style/Theme.EVChargingMobile" />
-121-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:80:13-58
+121-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:81:13-58
 122
-123        <!-- QR Scanner Activity -->
+123        <!-- Booking Activity -->
 124        <activity
-124-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:83:9-86:61
-125            android:name="com.evcharging.mobile.ui.operator.QrScannerActivity"
-125-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:84:13-58
+124-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:84:9-87:61
+125            android:name="com.evcharging.mobile.ui.bookings.BookingActivity"
+125-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:85:13-56
 126            android:exported="false"
-126-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:85:13-37
+126-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:86:13-37
 127            android:theme="@style/Theme.EVChargingMobile" />
-127-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:86:13-58
+127-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:87:13-58
 128
-129        <!-- Maps Activity -->
+129        <!-- QR Scanner Activity -->
 130        <activity
-130-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:89:9-92:61
-131            android:name="com.evcharging.mobile.ui.maps.MapsActivity"
-131-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:90:13-49
+130-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:90:9-93:61
+131            android:name="com.evcharging.mobile.ui.operator.QrScannerActivity"
+131-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:91:13-58
 132            android:exported="false"
-132-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:91:13-37
+132-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:92:13-37
 133            android:theme="@style/Theme.EVChargingMobile" />
-133-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:92:13-58
+133-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:93:13-58
 134
-135        <!-- API Test Activity -->
+135        <!-- Maps Activity -->
 136        <activity
-136-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:95:9-98:61
-137            android:name="com.evcharging.mobile.ui.APITestActivity"
-137-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:96:13-47
+136-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:96:9-99:61
+137            android:name="com.evcharging.mobile.ui.maps.MapsActivity"
+137-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:97:13-49
 138            android:exported="false"
-138-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:97:13-37
+138-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:98:13-37
 139            android:theme="@style/Theme.EVChargingMobile" />
-139-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:98:13-58
+139-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:99:13-58
 140
-141        <provider
-141-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-142            android:name="androidx.startup.InitializationProvider"
-142-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
-143            android:authorities="com.evcharging.mobile.androidx-startup"
-143-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
-144            android:exported="false" >
-144-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
-145            <meta-data
-145-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-146                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-146-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
-147                android:value="androidx.startup" />
-147-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
-148            <meta-data
-148-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/dhanushikan/.gradle/caches/transforms-3/e47e2d3ab062862e7f14c2922936b308/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
-149                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-149-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/dhanushikan/.gradle/caches/transforms-3/e47e2d3ab062862e7f14c2922936b308/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
-150                android:value="androidx.startup" />
-150-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/dhanushikan/.gradle/caches/transforms-3/e47e2d3ab062862e7f14c2922936b308/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+141        <!-- API Test Activity -->
+142        <activity
+142-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:102:9-105:61
+143            android:name="com.evcharging.mobile.ui.APITestActivity"
+143-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:103:13-47
+144            android:exported="false"
+144-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:104:13-37
+145            android:theme="@style/Theme.EVChargingMobile" />
+145-->/Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:105:13-58
+146
+147        <provider
+147-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+148            android:name="androidx.startup.InitializationProvider"
+148-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+149            android:authorities="com.evcharging.mobile.androidx-startup"
+149-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+150            android:exported="false" >
+150-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
 151            <meta-data
-151-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
-152                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-152-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+151-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+152                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+152-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
 153                android:value="androidx.startup" />
-153-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
-154        </provider> <!-- Needs to be explicitly declared on P+ -->
-155        <uses-library
-155-->[com.google.android.gms:play-services-maps:18.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/5d7417d15d9577dab4eab246837984ca/transformed/play-services-maps-18.2.0/AndroidManifest.xml:39:9-41:40
-156            android:name="org.apache.http.legacy"
-156-->[com.google.android.gms:play-services-maps:18.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/5d7417d15d9577dab4eab246837984ca/transformed/play-services-maps-18.2.0/AndroidManifest.xml:40:13-50
-157            android:required="false" />
-157-->[com.google.android.gms:play-services-maps:18.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/5d7417d15d9577dab4eab246837984ca/transformed/play-services-maps-18.2.0/AndroidManifest.xml:41:13-37
-158
-159        <activity
-159-->[com.google.android.gms:play-services-base:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/8c9dd428f01907497112191d185a6b48/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
-160            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-160-->[com.google.android.gms:play-services-base:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/8c9dd428f01907497112191d185a6b48/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:19-85
-161            android:exported="false"
-161-->[com.google.android.gms:play-services-base:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/8c9dd428f01907497112191d185a6b48/transformed/play-services-base-18.1.0/AndroidManifest.xml:22:19-43
-162            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-162-->[com.google.android.gms:play-services-base:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/8c9dd428f01907497112191d185a6b48/transformed/play-services-base-18.1.0/AndroidManifest.xml:21:19-78
-163
-164        <meta-data
-164-->[com.google.android.gms:play-services-basement:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/28a741edc80a99d6fd4d8140326ebccf/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
-165            android:name="com.google.android.gms.version"
-165-->[com.google.android.gms:play-services-basement:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/28a741edc80a99d6fd4d8140326ebccf/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
-166            android:value="@integer/google_play_services_version" />
-166-->[com.google.android.gms:play-services-basement:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/28a741edc80a99d6fd4d8140326ebccf/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
-167
-168        <uses-library
-168-->[androidx.window:window:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/8f9220d66762372c6aa1e02e07b4f277/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
-169            android:name="androidx.window.extensions"
-169-->[androidx.window:window:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/8f9220d66762372c6aa1e02e07b4f277/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
-170            android:required="false" />
-170-->[androidx.window:window:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/8f9220d66762372c6aa1e02e07b4f277/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
-171        <uses-library
-171-->[androidx.window:window:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/8f9220d66762372c6aa1e02e07b4f277/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
-172            android:name="androidx.window.sidecar"
-172-->[androidx.window:window:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/8f9220d66762372c6aa1e02e07b4f277/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
-173            android:required="false" />
-173-->[androidx.window:window:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/8f9220d66762372c6aa1e02e07b4f277/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
-174
-175        <activity
-175-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:47:9-53:63
-176            android:name="com.journeyapps.barcodescanner.CaptureActivity"
-176-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:48:13-74
-177            android:clearTaskOnLaunch="true"
-177-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:49:13-45
-178            android:screenOrientation="sensorLandscape"
-178-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:50:13-56
-179            android:stateNotNeeded="true"
-179-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:51:13-42
-180            android:theme="@style/zxing_CaptureTheme"
-180-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:52:13-54
-181            android:windowSoftInputMode="stateAlwaysHidden" />
-181-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:53:13-60
-182
-183        <receiver
-183-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
-184            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-184-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
-185            android:directBootAware="false"
-185-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
-186            android:enabled="true"
-186-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
-187            android:exported="true"
-187-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
-188            android:permission="android.permission.DUMP" >
-188-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
-189            <intent-filter>
-189-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
-190                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-190-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
-190-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
-191            </intent-filter>
-192            <intent-filter>
-192-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
-193                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-193-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
-193-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
-194            </intent-filter>
+153-->[androidx.emoji2:emoji2:1.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/791b39fe68826e8543c46f2d7f8b152e/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+154            <meta-data
+154-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/dhanushikan/.gradle/caches/transforms-3/e47e2d3ab062862e7f14c2922936b308/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+155                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+155-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/dhanushikan/.gradle/caches/transforms-3/e47e2d3ab062862e7f14c2922936b308/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+156                android:value="androidx.startup" />
+156-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/dhanushikan/.gradle/caches/transforms-3/e47e2d3ab062862e7f14c2922936b308/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+157            <meta-data
+157-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+158                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+158-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+159                android:value="androidx.startup" />
+159-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+160        </provider> <!-- Needs to be explicitly declared on P+ -->
+161        <uses-library
+161-->[com.google.android.gms:play-services-maps:18.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/5d7417d15d9577dab4eab246837984ca/transformed/play-services-maps-18.2.0/AndroidManifest.xml:39:9-41:40
+162            android:name="org.apache.http.legacy"
+162-->[com.google.android.gms:play-services-maps:18.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/5d7417d15d9577dab4eab246837984ca/transformed/play-services-maps-18.2.0/AndroidManifest.xml:40:13-50
+163            android:required="false" />
+163-->[com.google.android.gms:play-services-maps:18.2.0] /Users/dhanushikan/.gradle/caches/transforms-3/5d7417d15d9577dab4eab246837984ca/transformed/play-services-maps-18.2.0/AndroidManifest.xml:41:13-37
+164
+165        <activity
+165-->[com.google.android.gms:play-services-base:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/8c9dd428f01907497112191d185a6b48/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+166            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+166-->[com.google.android.gms:play-services-base:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/8c9dd428f01907497112191d185a6b48/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+167            android:exported="false"
+167-->[com.google.android.gms:play-services-base:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/8c9dd428f01907497112191d185a6b48/transformed/play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+168            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+168-->[com.google.android.gms:play-services-base:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/8c9dd428f01907497112191d185a6b48/transformed/play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+169
+170        <meta-data
+170-->[com.google.android.gms:play-services-basement:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/28a741edc80a99d6fd4d8140326ebccf/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+171            android:name="com.google.android.gms.version"
+171-->[com.google.android.gms:play-services-basement:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/28a741edc80a99d6fd4d8140326ebccf/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+172            android:value="@integer/google_play_services_version" />
+172-->[com.google.android.gms:play-services-basement:18.1.0] /Users/dhanushikan/.gradle/caches/transforms-3/28a741edc80a99d6fd4d8140326ebccf/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+173
+174        <uses-library
+174-->[androidx.window:window:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/8f9220d66762372c6aa1e02e07b4f277/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+175            android:name="androidx.window.extensions"
+175-->[androidx.window:window:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/8f9220d66762372c6aa1e02e07b4f277/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+176            android:required="false" />
+176-->[androidx.window:window:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/8f9220d66762372c6aa1e02e07b4f277/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+177        <uses-library
+177-->[androidx.window:window:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/8f9220d66762372c6aa1e02e07b4f277/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+178            android:name="androidx.window.sidecar"
+178-->[androidx.window:window:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/8f9220d66762372c6aa1e02e07b4f277/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+179            android:required="false" />
+179-->[androidx.window:window:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/8f9220d66762372c6aa1e02e07b4f277/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+180
+181        <activity
+181-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:47:9-53:63
+182            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+182-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:48:13-74
+183            android:clearTaskOnLaunch="true"
+183-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:49:13-45
+184            android:screenOrientation="sensorLandscape"
+184-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:50:13-56
+185            android:stateNotNeeded="true"
+185-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:51:13-42
+186            android:theme="@style/zxing_CaptureTheme"
+186-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:52:13-54
+187            android:windowSoftInputMode="stateAlwaysHidden" />
+187-->[com.journeyapps:zxing-android-embedded:4.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/ba51c786c9bba5e089e0f2bc76f289cf/transformed/zxing-android-embedded-4.3.0/AndroidManifest.xml:53:13-60
+188
+189        <receiver
+189-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+190            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+190-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+191            android:directBootAware="false"
+191-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+192            android:enabled="true"
+192-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+193            android:exported="true"
+193-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+194            android:permission="android.permission.DUMP" >
+194-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
 195            <intent-filter>
-195-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
-196                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-196-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
-196-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+195-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+196                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+196-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+196-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
 197            </intent-filter>
 198            <intent-filter>
-198-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
-199                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-199-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
-199-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+198-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+199                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+199-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+199-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
 200            </intent-filter>
-201        </receiver>
-202    </application>
-203
-204</manifest>
+201            <intent-filter>
+201-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+202                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+202-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+202-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+203            </intent-filter>
+204            <intent-filter>
+204-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+205                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+205-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+205-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/766775ef9b8a5fb948a8a3da34e7cf54/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+206            </intent-filter>
+207        </receiver>
+208    </application>
+209
+210</manifest>

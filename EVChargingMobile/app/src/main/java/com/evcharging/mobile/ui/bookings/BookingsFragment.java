@@ -87,8 +87,21 @@ public class BookingsFragment extends Fragment {
 
     private void setupRecyclerView() {
         adapter = new BookingsAdapter(new ArrayList<>(), booking -> {
-            // Handle booking click
-            Toast.makeText(getContext(), "Booking: " + booking.getStationName(), Toast.LENGTH_SHORT).show();
+            // Navigate to QR screen if Confirmed and qrToken available
+            if ("Confirmed".equalsIgnoreCase(booking.getStatus()) && booking.getQrToken() != null && !booking.getQrToken().isEmpty()) {
+                Bundle args = new Bundle();
+                args.putString("bookingId", booking.getId());
+                args.putString("qrToken", booking.getQrToken());
+                androidx.fragment.app.Fragment qrFragment = new com.evcharging.mobile.ui.qr.QrGeneratorFragment();
+                qrFragment.setArguments(args);
+                requireActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.nav_host_fragment, qrFragment)
+                        .addToBackStack(null)
+                        .commit();
+            } else {
+                Toast.makeText(getContext(), "QR available when booking is Confirmed", Toast.LENGTH_SHORT).show();
+            }
         });
         
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -168,6 +181,10 @@ public class BookingsFragment extends Fragment {
                 apiBooking.getStatus() != null ? apiBooking.getStatus() : "Unknown",
                 getBookingState(apiBooking.getStatus())
             );
+            // carry qrToken for Confirmed bookings
+            if (apiBooking.getQrToken() != null) {
+                uiBooking.setQrToken(apiBooking.getQrToken());
+            }
             uiBookings.add(uiBooking);
         }
         

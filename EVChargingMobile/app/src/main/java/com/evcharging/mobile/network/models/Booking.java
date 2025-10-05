@@ -31,6 +31,9 @@ public class Booking {
     @Json(name = "createdAt")
     private String createdAt;
 
+    @Json(name = "qrToken")
+    private String qrToken;
+
     /**
      * Default constructor
      */
@@ -105,5 +108,8 @@ public class Booking {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    public String getQrToken() { return qrToken; }
+    public void setQrToken(String qrToken) { this.qrToken = qrToken; }
 }
 

@@ -90,6 +90,12 @@
             android:exported="false"
             android:theme="@style/Theme.EVChargingMobile" />
 
+        <!-- Operator Activity -->
+        <activity
+            android:name="com.evcharging.mobile.ui.OperatorActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EVChargingMobile" />
+
         <!-- Dashboard Activity -->
         <activity
             android:name="com.evcharging.mobile.ui.dashboard.DashboardActivity"

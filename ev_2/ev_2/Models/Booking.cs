@@ -20,9 +20,24 @@ namespace EV_2.Models
         public DateTime ReservationDateTime { get; set; }
 
         [BsonElement("Status")]
-        public string Status { get; set; } = "Pending"; // Pending / Approved / Cancelled
+        public string Status { get; set; } = "Pending"; // Pending | Confirmed | InProgress | Completed | Cancelled
 
         [BsonElement("CreatedAt")]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        [BsonElement("UpdatedAt")]
+        public DateTime? UpdatedAt { get; set; } = null;
+
+        [BsonElement("qrToken")]
+        public string? QrToken { get; set; } = null; // Generated when Confirmed
+
+        [BsonElement("validatedAt")]
+        public DateTime? ValidatedAt { get; set; } = null; // First successful QR validation
+
+        [BsonElement("StartedAt")]
+        public DateTime? StartedAt { get; set; } = null;
+
+        [BsonElement("CompletedAt")]
+        public DateTime? CompletedAt { get; set; } = null;
     }
 }
