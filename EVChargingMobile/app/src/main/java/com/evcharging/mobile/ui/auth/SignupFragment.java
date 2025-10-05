@@ -28,7 +28,7 @@ import retrofit2.Response;
  */
 public class SignupFragment extends Fragment {
 
-    private TextInputEditText etNIC, etName, etEmail, etPhone, etPassword, etConfirmPassword;
+    private TextInputEditText etNIC, etName, etEmail, etPhone, etEvModel, etPassword, etConfirmPassword;
     private MaterialButton btnSignup, btnLogin;
 
     @Override
@@ -46,6 +46,7 @@ public class SignupFragment extends Fragment {
         etName = view.findViewById(R.id.et_name);
         etEmail = view.findViewById(R.id.et_email);
         etPhone = view.findViewById(R.id.et_phone);
+        etEvModel = view.findViewById(R.id.et_ev_model);
         etPassword = view.findViewById(R.id.et_password);
         etConfirmPassword = view.findViewById(R.id.et_confirm_password);
         btnSignup = view.findViewById(R.id.btn_signup);
@@ -63,22 +64,23 @@ public class SignupFragment extends Fragment {
         String name = etName.getText().toString().trim();
         String email = etEmail.getText().toString().trim();
         String phone = etPhone.getText().toString().trim();
+        String evModel = etEvModel.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
         String confirmPassword = etConfirmPassword.getText().toString().trim();
 
         Log.d("SignupFragment", "Email: " + email + ", Password: " + password);
         
-        if (validateInput(nic, name, email, phone, password, confirmPassword)) {
+        if (validateInput(nic, name, email, phone, evModel, password, confirmPassword)) {
             Log.d("SignupFragment", "Validation passed, calling performSignup");
-            performSignup(nic, name, email, phone, password);
+            performSignup(nic, name, email, phone, evModel, password);
         } else {
             Log.d("SignupFragment", "Validation failed");
         }
     }
 
-    private boolean validateInput(String nic, String name, String email, String phone, String password, String confirmPassword) {
+    private boolean validateInput(String nic, String name, String email, String phone, String evModel, String password, String confirmPassword) {
         if (!ValidationUtils.isValidNIC(nic)) {
-            etNIC.setError("Please enter a valid NIC");
+            etNIC.setError("Please enter a valid NIC (12 digits or 9 digits + V/v)");
             return false;
         }
 
@@ -97,6 +99,11 @@ public class SignupFragment extends Fragment {
             return false;
         }
 
+        if (evModel.length() < 2) {
+            etEvModel.setError("Please enter your EV model");
+            return false;
+        }
+
         if (password.length() < 6) {
             etPassword.setError("Password must be at least 6 characters");
             return false;
@@ -110,7 +117,7 @@ public class SignupFragment extends Fragment {
         return true;
     }
 
-    private void performSignup(String nic, String name, String email, String phone, String password) {
+    private void performSignup(String nic, String name, String email, String phone, String evModel, String password) {
         Log.d("SignupFragment", "performSignup() called with email: " + email);
         Context context = getContext();
         if (context == null) {
@@ -131,9 +138,11 @@ public class SignupFragment extends Fragment {
         signupRequest.setPasswordHash(password);
         signupRequest.setStatus("Active");
         
-        // Add default EV model
+        // Add EV model from user input
         java.util.List<String> evModels = new java.util.ArrayList<>();
-        evModels.add("Tesla Model 3"); // Default EV model
+        if (evModel != null && !evModel.trim().isEmpty()) {
+            evModels.add(evModel.trim());
+        }
         signupRequest.setEvModels(evModels);
 
         Log.d("SignupFragment", "Sending signup request: " + signupRequest.getEmail());

@@ -115,6 +115,7 @@ id chip_show_dc
 id chip_station_type
 id et_confirm_password
 id et_email
+id et_ev_model
 id et_name
 id et_nic
 id et_password

@@ -95,6 +95,25 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- EV Model Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            style="@style/TextInputStyle"
+            app:startIconDrawable="@drawable/ic_car"
+            android:hint="@string/ev_models"
+            app:helperText="@string/ev_models_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_ev_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <!-- Password Input -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"

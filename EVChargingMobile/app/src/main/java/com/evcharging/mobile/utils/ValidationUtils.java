@@ -25,11 +25,26 @@ public class ValidationUtils {
 
     /**
      * Validates NIC format (Sri Lankan NIC)
+     * Accepts both formats:
+     * - Fully numerical: 12 digits (e.g., "199810400015")
+     * - Numerical with one alphabet: 9 digits + V/v (e.g., "981040015v")
      */
     public static boolean isValidNIC(String nic) {
         if (nic == null) return false;
-        // Basic NIC validation - 9 digits with optional V at end
-        return nic.matches("\\d{9}[Vv]?");
+        // Remove any whitespace
+        nic = nic.trim();
+        
+        // Format 1: Fully numerical (12 digits) - New NIC format
+        if (nic.matches("\\d{12}")) {
+            return true;
+        }
+        
+        // Format 2: 9 digits with V or v at the end - Old NIC format
+        if (nic.matches("\\d{9}[Vv]")) {
+            return true;
+        }
+        
+        return false;
     }
 
     /**
