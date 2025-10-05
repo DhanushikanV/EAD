@@ -1,9 +1,16 @@
 -- Merging decision tree log ---
+meta-data#com.google.android.geo.API_KEY
+INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:26:9-28:54
+	android:value
+		INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml
+		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:28:13-51
+	android:name
+		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:27:13-58
 manifest
-ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-109:12
-INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-109:12
-INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-109:12
-INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-109:12
+ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-115:12
+INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-115:12
+INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-115:12
+INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-115:12
 MERGED from [androidx.databinding:databinding-adapters:7.4.2] /Users/dhanushikan/.gradle/caches/transforms-3/0b6eae7a0528cd3cab0f7fa5c8b7fa21/transformed/databinding-adapters-7.4.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:databinding-runtime:7.4.2] /Users/dhanushikan/.gradle/caches/transforms-3/38b9ae41e6a1be86e40d88c015980f00/transformed/databinding-runtime-7.4.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.databinding:viewbinding:7.4.2] /Users/dhanushikan/.gradle/caches/transforms-3/2e5a15fdae7174e6e7d682593cbb98c6/transformed/viewbinding-7.4.2/AndroidManifest.xml:2:1-7:12
@@ -67,22 +74,22 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/dhanushikan/.gradl
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/4a128805ae54552b7183634231e39ff5/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/dhanushikan/.gradle/caches/transforms-3/ae4109ec1e873f2074e4c3a60211a759/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/dhanushikan/.gradle/caches/transforms-3/9d8d7feb3580355ffff343143a4678dc/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-109:12
-INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-109:12
-INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-109:12
+INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-115:12
+INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-115:12
+INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-115:12
 	package
 		INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml
-		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-109:12
+		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-115:12
 		INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml
-		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-109:12
+		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-115:12
 		INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml
-		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-109:12
+		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:1-115:12
 		INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:2:11-69
@@ -117,7 +124,7 @@ ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main
 	android:name
 		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:11:22-63
 application
-ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:13:5-107:19
+ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:13:5-113:19
 MERGED from [com.google.android.material:material:1.10.0] /Users/dhanushikan/.gradle/caches/transforms-3/31fc64d35410be5bbea9dbaeafbe9ddf/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] /Users/dhanushikan/.gradle/caches/transforms-3/31fc64d35410be5bbea9dbaeafbe9ddf/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/dhanushikan/.gradle/caches/transforms-3/4b929ab10fd806b94f86bd527f89dd0a/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -170,12 +177,6 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/dhanushikan/.gradle/
 		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:15:9-65
 	android:usesCleartextTraffic
 		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:22:9-44
-meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:26:9-28:65
-	android:value
-		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:28:13-62
-	android:name
-		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:27:13-58
 activity#com.evcharging.mobile.ui.SplashActivity
 ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:31:9-39:20
 	android:exported
@@ -282,6 +283,14 @@ ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main
 		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:105:13-58
 	android:name
 		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:103:13-47
+activity#com.evcharging.mobile.ui.OperatorBookingsActivity
+ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:108:9-111:61
+	android:exported
+		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:110:13-37
+	android:theme
+		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:111:13-58
+	android:name
+		ADDED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml:109:13-56
 uses-sdk
 INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/dhanushikan/Documents/GitHub/EAD/EVChargingMobile/app/src/main/AndroidManifest.xml

@@ -17,7 +17,39 @@
         android:textStyle="bold"
         android:textColor="@color/primary_color"
         android:gravity="center"
-        android:layout_marginBottom="32dp" />
+        android:layout_marginBottom="16dp" />
+
+    <!-- Station Selection -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Station"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/spinner_station_selection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -60,6 +92,7 @@
             android:padding="16dp">
 
             <TextView
+                android:id="@+id/tv_today_bookings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Today's Bookings"
@@ -70,9 +103,10 @@
                 android:layout_marginBottom="16dp" />
 
             <TextView
+                android:id="@+id/tv_today_bookings_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="• 09:00 - John Doe (Approved)\n• 10:30 - Jane Smith (Approved)\n• 14:00 - Mike Johnson (Pending)\n• 16:30 - Sarah Wilson (Approved)"
+                android:text=""
                 android:textSize="14sp"
                 android:lineSpacingExtra="4dp" />
 
@@ -112,11 +146,13 @@
                 android:layout_marginBottom="8dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_view_all_bookings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="View All Bookings"
-                android:textColor="@color/primary_color"
-                style="@style/Widget.Material3.Button.OutlinedButton" />
+                android:textColor="@android:color/white"
+                app:backgroundTint="@color/primary_color"
+                android:textAllCaps="false" />
 
         </LinearLayout>
 

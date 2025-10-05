@@ -25,6 +25,14 @@ import retrofit2.http.Query;
 public interface BookingService {
 
     /**
+     * Get all bookings (for operators)
+     * 
+     * @return Call<List<Booking>> containing all bookings
+     */
+    @GET("Booking")
+    Call<List<Booking>> getAllBookings();
+
+    /**
      * Get all bookings for a user
      * 
      * @param nic User NIC

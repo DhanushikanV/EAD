@@ -65,10 +65,10 @@
         android:theme="@style/Theme.EVChargingMobile"
         android:usesCleartextTraffic="true" >
 
-        <!-- Google Maps API Key - Load from environment -->
+        <!-- Google Maps API Key via manifest placeholder -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDummyKeyForTesting123456789" />
+            android:value="" />
 
         <!-- Main Activity -->
         <activity
@@ -141,6 +141,12 @@
         <!-- API Test Activity -->
         <activity
             android:name="com.evcharging.mobile.ui.APITestActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EVChargingMobile" />
+
+        <!-- Operator Bookings Activity -->
+        <activity
+            android:name="com.evcharging.mobile.ui.OperatorBookingsActivity"
             android:exported="false"
             android:theme="@style/Theme.EVChargingMobile" />
 

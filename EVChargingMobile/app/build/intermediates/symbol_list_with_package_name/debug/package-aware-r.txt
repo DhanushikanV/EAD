@@ -3383,6 +3383,7 @@ id btn_select_station
 id btn_select_time
 id btn_share_qr
 id btn_signup
+id btn_view_all_bookings
 id btn_view_on_map
 id btn_view_station_details
 id btn_view_stations
@@ -3745,6 +3746,7 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
+id spinner_station_selection
 id spline
 id split_action_bar
 id spread
@@ -3846,6 +3848,8 @@ id tv_station_type
 id tv_summary_date
 id tv_summary_station
 id tv_summary_time
+id tv_today_bookings
+id tv_today_bookings_list
 id tv_total_bookings
 id tv_total_slots
 id tv_user_email
@@ -4013,6 +4017,7 @@ layout activity_dashboard
 layout activity_main
 layout activity_maps
 layout activity_operator
+layout activity_operator_bookings
 layout activity_operator_simple
 layout activity_splash
 layout activity_station_selection
