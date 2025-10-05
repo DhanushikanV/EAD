@@ -190,105 +190,12 @@
                     android:textColor="@color/text_primary"
                     android:layout_marginBottom="16dp" />
 
-                <!-- Mock recent bookings -->
+                <!-- Recent bookings container - populated dynamically -->
                 <LinearLayout
+                    android:id="@+id/recent_activity_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="8dp">
-
-                        <View
-                            android:layout_width="8dp"
-                            android:layout_height="8dp"
-                            android:background="@drawable/circle_background"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginEnd="12dp" />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Colombo Fort Station"
-                                android:textSize="14sp"
-                                android:textColor="@color/text_primary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Tomorrow, 2:00 PM"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Approved"
-                            android:textSize="12sp"
-                            android:textColor="@color/status_approved"
-                            android:background="@drawable/availability_background_available"
-                            android:padding="4dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="8dp">
-
-                        <View
-                            android:layout_width="8dp"
-                            android:layout_height="8dp"
-                            android:background="@drawable/circle_background"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginEnd="12dp" />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Kandy City Center"
-                                android:textSize="14sp"
-                                android:textColor="@color/text_primary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Today, 4:30 PM"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Pending"
-                            android:textSize="12sp"
-                            android:textColor="@color/status_pending"
-                            android:background="@drawable/availability_background_available"
-                            android:padding="4dp" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
+                    android:orientation="vertical" />
 
             </LinearLayout>
 

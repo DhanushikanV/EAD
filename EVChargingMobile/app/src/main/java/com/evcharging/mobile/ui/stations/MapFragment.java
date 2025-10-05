@@ -46,7 +46,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         View view = inflater.inflate(R.layout.fragment_map, container, false);
         
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
-        stations = getMockStations();
+        stations = new ArrayList<>();
+        fetchStationsFromApi();
         
         setupMapFragment();
         
@@ -147,25 +148,41 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         }
     }
 
-    private List<Station> getMockStations() {
-        List<Station> stations = new ArrayList<>();
-        
-        stations.add(new Station("1", "Colombo Fort Station", "AC Fast Charging", 
-                6.9271, 79.8612, "Colombo Fort, Sri Lanka", 4, 2, "Operational"));
-        
-        stations.add(new Station("2", "Kandy City Center", "DC Super Fast", 
-                7.2906, 80.6337, "Kandy, Sri Lanka", 6, 4, "Operational"));
-        
-        stations.add(new Station("3", "Galle Fort Station", "AC Standard", 
-                6.0329, 80.2169, "Galle, Sri Lanka", 3, 1, "Operational"));
-        
-        stations.add(new Station("4", "Anuradhapura Station", "AC Fast Charging", 
-                8.3114, 80.4037, "Anuradhapura, Sri Lanka", 5, 0, "Maintenance"));
-        
-        stations.add(new Station("5", "Jaffna Station", "DC Fast", 
-                9.6615, 80.0255, "Jaffna, Sri Lanka", 4, 3, "Operational"));
-        
-        return stations;
+    private void fetchStationsFromApi() {
+        com.evcharging.mobile.network.api.ChargingStationService stationService =
+                com.evcharging.mobile.network.ApiClient.getRetrofitInstance(requireContext())
+                        .create(com.evcharging.mobile.network.api.ChargingStationService.class);
+
+        stationService.getAllStations().enqueue(new retrofit2.Callback<java.util.List<com.evcharging.mobile.network.models.ChargingStation>>() {
+            @Override
+            public void onResponse(retrofit2.Call<java.util.List<com.evcharging.mobile.network.models.ChargingStation>> call,
+                                   retrofit2.Response<java.util.List<com.evcharging.mobile.network.models.ChargingStation>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    stations.clear();
+                    for (com.evcharging.mobile.network.models.ChargingStation s : response.body()) {
+                        stations.add(new Station(
+                                s.getId(),
+                                s.getName(),
+                                s.getType(),
+                                s.getLatitude(),
+                                s.getLongitude(),
+                                s.getLocation() != null ? s.getLocation() : "",
+                                s.getTotalSlots(),
+                                s.getAvailableSlots(),
+                                s.getStatus() != null ? s.getStatus() : ""
+                        ));
+                    }
+                    if (googleMap != null) {
+                        addStationMarkers();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(retrofit2.Call<java.util.List<com.evcharging.mobile.network.models.ChargingStation>> call, Throwable t) {
+                // keep empty map
+            }
+        });
     }
 }
 

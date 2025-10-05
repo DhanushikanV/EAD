@@ -235,9 +235,10 @@
                         android:gravity="center">
 
                         <TextView
+                            android:id="@+id/tv_total_bookings"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="15"
+                            android:text="0"
                             android:textSize="24sp"
                             android:textStyle="bold"
                             android:textColor="@color/primary_color" />
@@ -260,9 +261,10 @@
                         android:gravity="center">
 
                         <TextView
+                            android:id="@+id/tv_completed_bookings"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="12"
+                            android:text="0"
                             android:textSize="24sp"
                             android:textStyle="bold"
                             android:textColor="@color/status_approved" />
@@ -285,9 +287,10 @@
                         android:gravity="center">
 
                         <TextView
+                            android:id="@+id/tv_cancelled_bookings"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="3"
+                            android:text="0"
                             android:textSize="24sp"
                             android:textStyle="bold"
                             android:textColor="@color/status_cancelled" />

@@ -67,6 +67,17 @@ namespace EV_2.Services
             return true;
         }
 
+        public async Task<bool> TrySetStatusAsync(IClientSessionHandle session, string id, string newStatus, Action<Booking>? mutate = null)
+        {
+            var existing = await _bookingCollection.Find(session, b => b.Id == id).FirstOrDefaultAsync();
+            if (existing is null) return false;
+            existing.Status = newStatus;
+            existing.UpdatedAt = DateTime.UtcNow;
+            mutate?.Invoke(existing);
+            await _bookingCollection.ReplaceOneAsync(session, b => b.Id == id, existing);
+            return true;
+        }
+
         public async Task<Booking?> GetByQrTokenAsync(string token) =>
             await _bookingCollection.Find(b => b.QrToken == token).FirstOrDefaultAsync();
     }

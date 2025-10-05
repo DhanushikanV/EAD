@@ -61,8 +61,17 @@ public class StationsFragment extends Fragment {
      */
     private void setupClickListeners(View view) {
         btnMapView.setOnClickListener(v -> {
-            // Launch Maps Activity
-            Toast.makeText(getContext(), "Map view functionality", Toast.LENGTH_SHORT).show();
+            // Navigate to MapFragment within stations
+            try {
+                androidx.fragment.app.Fragment mapFragment = new com.evcharging.mobile.ui.stations.MapFragment();
+                requireActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(com.evcharging.mobile.R.id.nav_host_fragment, mapFragment)
+                        .addToBackStack(null)
+                        .commit();
+            } catch (Exception e) {
+                Toast.makeText(getContext(), "Unable to open map view", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 
@@ -80,26 +89,65 @@ public class StationsFragment extends Fragment {
     }
 
     /**
-     * Load stations from local SQLite database
+     * Load stations - always fetch fresh data from API
      */
     private void loadStations() {
-        try {
-            stationDao.open();
-            List<StationCache> cachedStations = stationDao.getAllStations();
-            stationDao.close();
-            
-            if (!cachedStations.isEmpty()) {
-                // Convert cached stations to display model
-                List<Station> stations = convertCachedStationsToDisplayStations(cachedStations);
-                adapter.updateStations(stations);
-            } else {
-                // Load mock data if no cached data
+        android.util.Log.d("StationsFragment", "Loading stations - fetching fresh data from API");
+        fetchStationsFromApi();
+    }
+
+    private void fetchStationsFromApi() {
+        Context context = getContext();
+        if (context == null) return;
+
+        com.evcharging.mobile.network.api.ChargingStationService stationService =
+                com.evcharging.mobile.network.ApiClient.getRetrofitInstance(context)
+                        .create(com.evcharging.mobile.network.api.ChargingStationService.class);
+
+        stationService.getAllStations().enqueue(new retrofit2.Callback<java.util.List<com.evcharging.mobile.network.models.ChargingStation>>() {
+            @Override
+            public void onResponse(retrofit2.Call<java.util.List<com.evcharging.mobile.network.models.ChargingStation>> call,
+                                   retrofit2.Response<java.util.List<com.evcharging.mobile.network.models.ChargingStation>> response) {
+                android.util.Log.d("StationsFragment", "API Response received. Success: " + response.isSuccessful() + ", Code: " + response.code());
+                
+                if (response.isSuccessful() && response.body() != null) {
+                    android.util.Log.d("StationsFragment", "Processing " + response.body().size() + " stations from API");
+                    List<Station> uiStations = new ArrayList<>();
+                    for (com.evcharging.mobile.network.models.ChargingStation s : response.body()) {
+                        android.util.Log.d("StationsFragment", "Station: " + s.getName() + " - Slots: " + s.getAvailableSlots() + "/" + s.getTotalSlots() + " - Status: " + s.getStatus());
+                        uiStations.add(new Station(
+                                s.getId(),
+                                s.getName(),
+                                s.getType(),
+                                s.getLatitude(),
+                                s.getLongitude(),
+                                s.getLocation() != null ? s.getLocation() : "",
+                                s.getTotalSlots(),
+                                s.getAvailableSlots(),
+                                s.getStatus() != null ? s.getStatus() : "Active"
+                        ));
+                    }
+                    adapter.updateStations(uiStations);
+                    android.util.Log.d("StationsFragment", "Successfully updated adapter with real station data");
+                } else {
+                    android.util.Log.e("StationsFragment", "API call failed. Code: " + response.code() + ", Message: " + response.message());
+                    if (response.errorBody() != null) {
+                        try {
+                            android.util.Log.e("StationsFragment", "Error body: " + response.errorBody().string());
+                        } catch (Exception e) {
+                            android.util.Log.e("StationsFragment", "Could not read error body", e);
+                        }
+                    }
+                    loadMockStations();
+                }
+            }
+
+            @Override
+            public void onFailure(retrofit2.Call<java.util.List<com.evcharging.mobile.network.models.ChargingStation>> call, Throwable t) {
+                android.util.Log.e("StationsFragment", "Network call failed", t);
                 loadMockStations();
             }
-        } catch (Exception e) {
-            Toast.makeText(getContext(), "Error loading stations: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-            loadMockStations();
-        }
+        });
     }
 
     /**
@@ -130,19 +178,33 @@ public class StationsFragment extends Fragment {
      * Load mock stations as fallback
      */
     private void loadMockStations() {
+        android.util.Log.d("StationsFragment", "Loading mock stations as fallback");
         List<Station> stations = new ArrayList<>();
         
-        stations.add(new Station("1", "Colombo Fort Station", "AC Fast Charging", 
-                6.9271, 79.8612, "Colombo Fort, Sri Lanka", 4, 2, "Operational"));
+        // Use real station data from backend as mock data
+        stations.add(new Station("68e29a9e17275692c39f6848", "Colombo City Centre Fast Charge", "DC", 
+                6.927079, 79.861244, "Colombo City Centre Mall Parking, Colombo, Sri Lanka", 8, 6, "Active"));
         
-        stations.add(new Station("2", "Kandy City Center", "DC Super Fast", 
-                7.2906, 80.6337, "Kandy, Sri Lanka", 6, 4, "Operational"));
+        stations.add(new Station("68e29a9f17275692c39f6849", "Orion Tech Park AC Hub", "AC", 
+                6.905, 79.87, "Orion City IT Park, Colombo, Sri Lanka", 12, 10, "Active"));
         
-        stations.add(new Station("3", "Galle Fort Station", "AC Standard", 
-                6.0329, 80.2169, "Galle, Sri Lanka", 3, 1, "Operational"));
+        stations.add(new Station("68e29a9f17275692c39f684a", "Galle Fort Harbor Station", "DC", 
+                6.0329, 80.2168, "Galle Fort Parking, Galle, Sri Lanka", 6, 6, "Active"));
         
-        stations.add(new Station("4", "Anuradhapura Station", "AC Fast Charging", 
-                8.3114, 80.4037, "Anuradhapura, Sri Lanka", 5, 3, "Maintenance"));
+        stations.add(new Station("68e29a9f17275692c39f684b", "BIA Airport QuickCharge", "DC", 
+                7.18, 79.884, "Bandaranaike Intl Airport, Katunayake, Sri Lanka", 10, 10, "Active"));
+        
+        stations.add(new Station("68e29a9f17275692c39f684c", "University of Peradeniya Green Lot", "AC", 
+                7.2546, 80.597, "University of Peradeniya, Kandy, Sri Lanka", 16, 16, "Active"));
+        
+        stations.add(new Station("68e29a9f17275692c39f684d", "Galle Face Promenade Chargers", "AC", 
+                6.9279, 79.8428, "Galle Face Green Car Park, Colombo, Sri Lanka", 8, 8, "Active"));
+        
+        stations.add(new Station("68e29a9f17275692c39f684e", "Kandy City Centre Multi-Storey", "AC", 
+                7.2916, 80.6337, "KCC Car Park, Kandy, Sri Lanka", 20, 20, "Active"));
+        
+        stations.add(new Station("68e29a9f17275692c39f684f", "Jaffna Library Plaza Chargers", "DC", 
+                9.6615, 80.0255, "Jaffna Public Library Car Park, Jaffna, Sri Lanka", 4, 4, "Active"));
         
         adapter.updateStations(stations);
     }

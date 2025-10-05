@@ -15,28 +15,28 @@ import java.util.List;
  */
 public class EVOwner {
 
-    @Json(name = "NIC")
+    @Json(name = "nic")
     private String nic;
 
-    @Json(name = "Name")
+    @Json(name = "name")
     private String name;
 
-    @Json(name = "Email")
+    @Json(name = "email")
     private String email;
 
-    @Json(name = "Phone")
+    @Json(name = "phone")
     private String phone;
 
-    @Json(name = "PasswordHash")
+    @Json(name = "passwordHash")
     private String passwordHash;
 
-    @Json(name = "Status")
+    @Json(name = "status")
     private String status;
 
-    @Json(name = "CreatedAt")
+    @Json(name = "createdAt")
     private String createdAt;
 
-    @Json(name = "EVModels")
+    @Json(name = "evModels")
     private List<String> evModels;
 
     /**

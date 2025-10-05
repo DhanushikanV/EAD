@@ -47,6 +47,7 @@ if (File.Exists(envFilePath))
     SetIfPresent("MongoDBSettings:ChargingStationCollectionName", "MONGODB_CHARGING_STATION_COLLECTION");
     SetIfPresent("MongoDBSettings:EVOwnerCollectionName", "MONGODB_EV_OWNER_COLLECTION");
     SetIfPresent("MongoDBSettings:UserCollectionName", "MONGODB_USER_COLLECTION");
+    SetIfPresent("MongoDBSettings:StationSlotsCollectionName", "MONGODB_STATION_SLOTS_COLLECTION");
 
     // JWT
     SetIfPresent("JwtSettings:Secret", "JWT_SECRET");
@@ -74,6 +75,7 @@ builder.Services.AddScoped<BookingService>();
 builder.Services.AddScoped<ChargingStationService>();
 builder.Services.AddScoped<EVOwnerService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<StationSlotService>();
 builder.Services.AddSingleton<JwtService>();
 
 // -------------------- Add Controllers, Swagger, CORS --------------------

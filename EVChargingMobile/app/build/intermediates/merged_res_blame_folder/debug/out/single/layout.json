@@ -96,16 +96,16 @@
         "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_auth.xml"
     },
     {
-        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_operator_simple.xml",
-        "source": "com.evcharging.mobile.app-main-53:/layout/activity_operator_simple.xml"
-    },
-    {
         "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_api_test.xml",
         "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_api_test.xml"
     },
     {
         "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_create_booking.xml",
         "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_create_booking.xml"
+    },
+    {
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_profile.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_profile.xml"
     },
     {
         "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_profile.xml",

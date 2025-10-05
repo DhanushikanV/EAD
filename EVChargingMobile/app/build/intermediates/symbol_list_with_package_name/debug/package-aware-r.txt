@@ -3311,7 +3311,6 @@ id accessibility_custom_action_9
 id actionDown
 id actionDownUp
 id actionUp
-id action_api_test
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -3329,7 +3328,6 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
-id action_refresh
 id action_settings
 id action_text
 id actions
@@ -3690,6 +3688,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id recent_activity_container
 id rectangles
 id recycler_view_bookings
 id recycler_view_stations
@@ -3824,6 +3823,8 @@ id tv_booking_info
 id tv_booking_station
 id tv_booking_status
 id tv_booking_type
+id tv_cancelled_bookings
+id tv_completed_bookings
 id tv_customer_name
 id tv_occupied_slots
 id tv_operating_hours
@@ -3845,6 +3846,7 @@ id tv_station_type
 id tv_summary_date
 id tv_summary_station
 id tv_summary_time
+id tv_total_bookings
 id tv_total_slots
 id tv_user_email
 id tv_user_email_detail

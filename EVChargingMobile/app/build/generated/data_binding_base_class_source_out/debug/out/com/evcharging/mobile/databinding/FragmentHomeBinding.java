@@ -4,6 +4,7 @@ package com.evcharging.mobile.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -27,6 +28,9 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final MaterialButton btnViewStations;
 
   @NonNull
+  public final LinearLayout recentActivityContainer;
+
+  @NonNull
   public final TextView tvApprovedCount;
 
   @NonNull
@@ -34,10 +38,12 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   private FragmentHomeBinding(@NonNull ScrollView rootView,
       @NonNull MaterialButton btnCreateBooking, @NonNull MaterialButton btnViewStations,
-      @NonNull TextView tvApprovedCount, @NonNull TextView tvPendingCount) {
+      @NonNull LinearLayout recentActivityContainer, @NonNull TextView tvApprovedCount,
+      @NonNull TextView tvPendingCount) {
     this.rootView = rootView;
     this.btnCreateBooking = btnCreateBooking;
     this.btnViewStations = btnViewStations;
+    this.recentActivityContainer = recentActivityContainer;
     this.tvApprovedCount = tvApprovedCount;
     this.tvPendingCount = tvPendingCount;
   }
@@ -81,6 +87,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.recent_activity_container;
+      LinearLayout recentActivityContainer = ViewBindings.findChildViewById(rootView, id);
+      if (recentActivityContainer == null) {
+        break missingId;
+      }
+
       id = R.id.tv_approved_count;
       TextView tvApprovedCount = ViewBindings.findChildViewById(rootView, id);
       if (tvApprovedCount == null) {
@@ -94,7 +106,7 @@ public final class FragmentHomeBinding implements ViewBinding {
       }
 
       return new FragmentHomeBinding((ScrollView) rootView, btnCreateBooking, btnViewStations,
-          tvApprovedCount, tvPendingCount);
+          recentActivityContainer, tvApprovedCount, tvPendingCount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

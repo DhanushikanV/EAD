@@ -83,26 +83,8 @@ public class BookingsAdapter extends RecyclerView.Adapter<BookingsAdapter.Bookin
             tvStatus.setText(booking.getStatus());
             tvType.setText(booking.getType());
 
-            // Set status color
-            int statusColor;
-            switch (booking.getStatus().toLowerCase()) {
-                case "approved":
-                    statusColor = itemView.getContext().getResources().getColor(R.color.status_approved);
-                    break;
-                case "pending":
-                    statusColor = itemView.getContext().getResources().getColor(R.color.status_pending);
-                    break;
-                case "completed":
-                    statusColor = itemView.getContext().getResources().getColor(R.color.status_completed);
-                    break;
-                case "cancelled":
-                    statusColor = itemView.getContext().getResources().getColor(R.color.status_cancelled);
-                    break;
-                default:
-                    statusColor = itemView.getContext().getResources().getColor(R.color.text_secondary);
-                    break;
-            }
-            tvStatus.setTextColor(statusColor);
+            // Set status text color to white for better visibility on green background
+            tvStatus.setTextColor(android.graphics.Color.WHITE);
         }
     }
 }

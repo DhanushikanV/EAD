@@ -42,12 +42,6 @@ public class DashboardActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_api_test) {
-            // Launch API test activity
-            Intent intent = new Intent(this, APITestActivity.class);
-            startActivity(intent);
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 }

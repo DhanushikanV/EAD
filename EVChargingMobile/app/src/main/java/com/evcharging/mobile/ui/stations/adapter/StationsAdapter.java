@@ -90,9 +90,11 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.Statio
             int statusColor;
             switch (station.getStatus().toLowerCase()) {
                 case "operational":
+                case "active":
                     statusColor = itemView.getContext().getResources().getColor(R.color.status_approved);
                     break;
                 case "maintenance":
+                case "inactive":
                     statusColor = itemView.getContext().getResources().getColor(R.color.status_pending);
                     break;
                 default:

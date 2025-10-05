@@ -24,6 +24,15 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final MaterialButton btnLogout;
 
   @NonNull
+  public final TextView tvCancelledBookings;
+
+  @NonNull
+  public final TextView tvCompletedBookings;
+
+  @NonNull
+  public final TextView tvTotalBookings;
+
+  @NonNull
   public final TextView tvUserEmail;
 
   @NonNull
@@ -39,11 +48,15 @@ public final class FragmentProfileBinding implements ViewBinding {
   public final TextView tvUserPhoneDetail;
 
   private FragmentProfileBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnLogout,
-      @NonNull TextView tvUserEmail, @NonNull TextView tvUserEmailDetail,
-      @NonNull TextView tvUserName, @NonNull TextView tvUserNameDetail,
-      @NonNull TextView tvUserPhoneDetail) {
+      @NonNull TextView tvCancelledBookings, @NonNull TextView tvCompletedBookings,
+      @NonNull TextView tvTotalBookings, @NonNull TextView tvUserEmail,
+      @NonNull TextView tvUserEmailDetail, @NonNull TextView tvUserName,
+      @NonNull TextView tvUserNameDetail, @NonNull TextView tvUserPhoneDetail) {
     this.rootView = rootView;
     this.btnLogout = btnLogout;
+    this.tvCancelledBookings = tvCancelledBookings;
+    this.tvCompletedBookings = tvCompletedBookings;
+    this.tvTotalBookings = tvTotalBookings;
     this.tvUserEmail = tvUserEmail;
     this.tvUserEmailDetail = tvUserEmailDetail;
     this.tvUserName = tvUserName;
@@ -84,6 +97,24 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_cancelled_bookings;
+      TextView tvCancelledBookings = ViewBindings.findChildViewById(rootView, id);
+      if (tvCancelledBookings == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_completed_bookings;
+      TextView tvCompletedBookings = ViewBindings.findChildViewById(rootView, id);
+      if (tvCompletedBookings == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_total_bookings;
+      TextView tvTotalBookings = ViewBindings.findChildViewById(rootView, id);
+      if (tvTotalBookings == null) {
+        break missingId;
+      }
+
       id = R.id.tv_user_email;
       TextView tvUserEmail = ViewBindings.findChildViewById(rootView, id);
       if (tvUserEmail == null) {
@@ -114,8 +145,9 @@ public final class FragmentProfileBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentProfileBinding((ScrollView) rootView, btnLogout, tvUserEmail,
-          tvUserEmailDetail, tvUserName, tvUserNameDetail, tvUserPhoneDetail);
+      return new FragmentProfileBinding((ScrollView) rootView, btnLogout, tvCancelledBookings,
+          tvCompletedBookings, tvTotalBookings, tvUserEmail, tvUserEmailDetail, tvUserName,
+          tvUserNameDetail, tvUserPhoneDetail);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -8,5 +8,6 @@
         public string ChargingStationCollectionName { get; set; } = "ChargingStations";
         public string EVOwnerCollectionName { get; set; } = "EVOwners";
         public string UserCollectionName { get; set; } = "Users";
+        public string StationSlotsCollectionName { get; set; } = "StationSlots";
     }
 }
