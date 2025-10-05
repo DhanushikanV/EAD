@@ -134,24 +134,8 @@ public class CreateBookingActivity extends AppCompatActivity {
             return;
         }
         
-        // Create mock booking
-        String bookingId = "BK" + System.currentTimeMillis();
-        String dateTime = tvSelectedDate.getText().toString() + " " + tvSelectedTime.getText().toString();
-        
-        Toast.makeText(this, 
-            "Booking created successfully!\n" +
-            "Booking ID: " + bookingId + "\n" +
-            "Station: " + selectedStation.getName() + "\n" +
-            "Date & Time: " + dateTime,
-            Toast.LENGTH_LONG).show();
-        
-        // TODO: Save booking to database and sync with backend
-        // For now, just show success message and finish activity
-        
-        // Delay before finishing to show the success message
-        new android.os.Handler().postDelayed(() -> {
-            finish();
-        }, 2000);
+        // Create real booking via API
+        createBookingViaAPI();
     }
 
     private void updateCreateButtonState() {
@@ -176,5 +160,98 @@ public class CreateBookingActivity extends AppCompatActivity {
                 updateCreateButtonState();
             }
         }
+    }
+    
+    private void createBookingViaAPI() {
+        // Get user NIC from SharedPreferences using the same manager as other fragments
+        com.evcharging.mobile.utils.SharedPreferencesManager prefsManager = new com.evcharging.mobile.utils.SharedPreferencesManager(this);
+        String userNIC = prefsManager.getUserNIC();
+        
+        if (userNIC == null || userNIC.isEmpty()) {
+            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        
+        // Create booking request
+        com.evcharging.mobile.network.models.Booking bookingRequest = new com.evcharging.mobile.network.models.Booking();
+        bookingRequest.setEvOwnerNIC(userNIC);
+        bookingRequest.setStationId(selectedStation.getId());
+        bookingRequest.setStatus("Pending");
+        
+        // Parse date and time
+        String dateStr = tvSelectedDate.getText().toString();
+        String timeStr = tvSelectedTime.getText().toString();
+        
+        try {
+            java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault());
+            java.text.SimpleDateFormat timeFormat = new java.text.SimpleDateFormat("HH:mm", java.util.Locale.getDefault());
+            
+            java.util.Date date = dateFormat.parse(dateStr);
+            java.util.Date time = timeFormat.parse(timeStr);
+            
+            java.util.Calendar calendar = java.util.Calendar.getInstance();
+            calendar.setTime(date);
+            
+            java.util.Calendar timeCalendar = java.util.Calendar.getInstance();
+            timeCalendar.setTime(time);
+            calendar.set(java.util.Calendar.HOUR_OF_DAY, timeCalendar.get(java.util.Calendar.HOUR_OF_DAY));
+            calendar.set(java.util.Calendar.MINUTE, timeCalendar.get(java.util.Calendar.MINUTE));
+            
+            java.text.SimpleDateFormat isoFormat = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", java.util.Locale.getDefault());
+            bookingRequest.setReservationDateTime(isoFormat.format(calendar.getTime()));
+            
+        } catch (Exception e) {
+            android.util.Log.e("CreateBookingActivity", "Error parsing date/time", e);
+            // Use current time as fallback
+            java.text.SimpleDateFormat isoFormat = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", java.util.Locale.getDefault());
+            bookingRequest.setReservationDateTime(isoFormat.format(new java.util.Date()));
+        }
+        
+        // Make API call
+        com.evcharging.mobile.network.api.BookingService bookingService = com.evcharging.mobile.network.ApiClient.getRetrofitInstance(this).create(com.evcharging.mobile.network.api.BookingService.class);
+        
+        retrofit2.Call<com.evcharging.mobile.network.models.Booking> call = bookingService.createBooking(bookingRequest);
+        
+        call.enqueue(new retrofit2.Callback<com.evcharging.mobile.network.models.Booking>() {
+            @Override
+            public void onResponse(retrofit2.Call<com.evcharging.mobile.network.models.Booking> call, retrofit2.Response<com.evcharging.mobile.network.models.Booking> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    com.evcharging.mobile.network.models.Booking createdBooking = response.body();
+                    
+                    Toast.makeText(CreateBookingActivity.this, 
+                        "✅ Booking created successfully!\n" +
+                        "Booking ID: " + createdBooking.getId() + "\n" +
+                        "Station: " + selectedStation.getName() + "\n" +
+                        "Status: " + createdBooking.getStatus(),
+                        Toast.LENGTH_LONG).show();
+                    
+                    android.util.Log.d("CreateBookingActivity", "Booking created with ID: " + createdBooking.getId());
+                    
+                    // Finish activity after successful booking creation
+                    new android.os.Handler().postDelayed(() -> {
+                        finish();
+                    }, 2000);
+                    
+                } else {
+                    String errorMsg = "Failed to create booking: " + response.message();
+                    if (response.errorBody() != null) {
+                        try {
+                            errorMsg = "Failed to create booking: " + response.errorBody().string();
+                        } catch (Exception e) {
+                            android.util.Log.e("CreateBookingActivity", "Error reading error body", e);
+                        }
+                    }
+                    Toast.makeText(CreateBookingActivity.this, errorMsg, Toast.LENGTH_LONG).show();
+                    android.util.Log.e("CreateBookingActivity", "Create booking failed: " + response.code() + " - " + response.message());
+                }
+            }
+            
+            @Override
+            public void onFailure(retrofit2.Call<com.evcharging.mobile.network.models.Booking> call, Throwable t) {
+                String errorMsg = "Network error: " + t.getMessage();
+                Toast.makeText(CreateBookingActivity.this, errorMsg, Toast.LENGTH_LONG).show();
+                android.util.Log.e("CreateBookingActivity", "Create booking network error", t);
+            }
+        });
     }
 }

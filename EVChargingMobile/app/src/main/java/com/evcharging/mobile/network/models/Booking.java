@@ -13,22 +13,22 @@ import com.squareup.moshi.Json;
  */
 public class Booking {
 
-    @Json(name = "Id")
+    @Json(name = "id")
     private String id;
 
-    @Json(name = "EVOwnerNIC")
+    @Json(name = "evOwnerNIC")
     private String evOwnerNIC;
 
-    @Json(name = "StationId")
+    @Json(name = "stationId")
     private String stationId;
 
-    @Json(name = "ReservationDateTime")
+    @Json(name = "reservationDateTime")
     private String reservationDateTime;
 
-    @Json(name = "Status")
+    @Json(name = "status")
     private String status; // Pending, Approved, Cancelled, Completed
 
-    @Json(name = "CreatedAt")
+    @Json(name = "createdAt")
     private String createdAt;
 
     /**

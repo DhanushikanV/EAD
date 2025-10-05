@@ -220,11 +220,15 @@ public class CreateBookingFragment extends Fragment {
         if (context == null) return;
         
         Log.d("CreateBookingFragment", "Creating booking for station: " + bookingRequest.getStationId());
+        Log.d("CreateBookingFragment", "Booking request: " + bookingRequest.toString());
+        Log.d("CreateBookingFragment", "User NIC: " + bookingRequest.getEvOwnerNIC());
+        Log.d("CreateBookingFragment", "DateTime: " + bookingRequest.getReservationDateTime());
         
         // Create BookingService and make API call
         BookingService bookingService = ApiClient.getRetrofitInstance(context).create(BookingService.class);
         
         Call<Booking> call = bookingService.createBooking(bookingRequest);
+        Log.d("CreateBookingFragment", "API call initiated");
         call.enqueue(new Callback<Booking>() {
             @Override
             public void onResponse(Call<Booking> call, Response<Booking> response) {
@@ -232,9 +236,15 @@ public class CreateBookingFragment extends Fragment {
                 btnCreateBooking.setText("Create Booking");
                 
                 Log.d("CreateBookingFragment", "Response received: " + response.code());
+                Log.d("CreateBookingFragment", "Response body: " + (response.body() != null ? response.body().toString() : "null"));
+                Log.d("CreateBookingFragment", "Response message: " + response.message());
                 
                 if (response.isSuccessful() && response.body() != null) {
                     Booking createdBooking = response.body();
+                    
+                    Log.d("CreateBookingFragment", "Booking created successfully!");
+                    Log.d("CreateBookingFragment", "Booking ID: " + createdBooking.getId());
+                    Log.d("CreateBookingFragment", "Booking Status: " + createdBooking.getStatus());
                     
                     Toast.makeText(context, 
                         "✅ Booking created successfully!\n" +
@@ -254,7 +264,9 @@ public class CreateBookingFragment extends Fragment {
                     String errorMsg = "Failed to create booking: " + response.message();
                     if (response.errorBody() != null) {
                         try {
-                            errorMsg = "Failed to create booking: " + response.errorBody().string();
+                            String errorBody = response.errorBody().string();
+                            errorMsg = "Failed to create booking: " + errorBody;
+                            Log.d("CreateBookingFragment", "Error body: " + errorBody);
                         } catch (Exception e) {
                             Log.e("CreateBookingFragment", "Error reading error body", e);
                         }

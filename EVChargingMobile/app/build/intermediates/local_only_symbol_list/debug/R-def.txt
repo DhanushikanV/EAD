@@ -101,6 +101,8 @@ id btn_create_booking
 id btn_login
 id btn_logout
 id btn_map_view
+id btn_new_booking
+id btn_refresh
 id btn_select_date
 id btn_select_station
 id btn_select_time
