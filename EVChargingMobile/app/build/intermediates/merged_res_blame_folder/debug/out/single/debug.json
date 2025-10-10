@@ -1,430 +1,426 @@
 [
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_activity_main.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_main.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_demo_info_background.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/demo_info_background.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_car.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_car.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_info.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_info.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_id_card.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_id_card.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_stations.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_stations.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_item_booking.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/item_booking.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_activity_dashboard.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_dashboard.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_ac_charging.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_ac_charging.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_availability_background_total.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/availability_background_total.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/navigation_operator_nav_graph.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/navigation/operator_nav_graph.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_logout.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_logout.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_list.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_list.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_item_station.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/item_station.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_add_booking.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_add_booking.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_activity_maps.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_maps.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_edit.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_edit.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_charging.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_charging.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_activity_auth.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_auth.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_car.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_car.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_marker_orange.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/marker_orange.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_email.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_email.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_arrow_back.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_arrow_back.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_item_station_selection.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/item_station_selection.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_dashboard.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_dashboard.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_completed.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_completed.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_create_booking.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_create_booking.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/menu_dashboard_menu.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/menu/dashboard_menu.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_add_booking.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_add_booking.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_station_details.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_station_details.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_circle_background.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/circle_background.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_calendar.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_calendar.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_qr_scanner.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_qr_scanner.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_scanner_overlay.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/scanner_overlay.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_search_background.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/search_background.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_availability_background_available.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/availability_background_available.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_pending.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_pending.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_button_primary_background.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/button_primary_background.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_operator.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_operator.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_operator.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_operator.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/xml_backup_rules.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/xml/backup_rules.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_create_booking.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_create_booking.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_qr_code.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_qr_code.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.evcharging.mobile.app-main-53:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_activity_maps.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_maps.xml"
-    },
-    {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_qr_scanner.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_qr_scanner.xml"
-    },
-    {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/menu_operator_bottom_navigation_menu.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/menu/operator_bottom_navigation_menu.xml"
-    },
-    {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_circle_green.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/circle_green.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_arrow_forward.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_arrow_forward.xml"
     },
     {
         "merged": "com.evcharging.mobile.app-merged_res-51:/layout_activity_operator_simple.xml.flat",
         "source": "com.evcharging.mobile.app-main-53:/layout/activity_operator_simple.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_activity_dashboard.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_dashboard.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_nav_header.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/nav_header.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/menu_operator_menu.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/menu/operator_menu.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_activity_auth.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_auth.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_qr_generator.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_qr_generator.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_nav_header_background.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/nav_header_background.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_time.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_time.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/menu_operator_menu.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/menu/operator_menu.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_marker_orange.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/marker_orange.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_share.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_share.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_marker_red.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/marker_red.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_calendar.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_calendar.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_login.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_login.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_bookings.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_bookings.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_bookings.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_bookings.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/xml_backup_rules.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/xml/backup_rules.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_calendar_today.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_calendar_today.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/menu_drawer_navigation_menu.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/menu/drawer_navigation_menu.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_activity_operator_bookings.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_operator_bookings.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_profile_avatar.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_profile_avatar.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_item_station.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/item_station.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_item_station_selection.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/item_station_selection.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_logout.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_logout.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/menu_drawer_navigation_menu.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/menu/drawer_navigation_menu.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_activity_create_booking.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_create_booking.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_qr_scanner.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_qr_scanner.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_nav_header_background.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/nav_header_background.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/menu_dashboard_menu.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/menu/dashboard_menu.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_activity_main.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_main.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_qr_code_background.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/qr_code_background.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.evcharging.mobile.app-main-53:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_availability_background_available.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/availability_background_available.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_arrow_back.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_arrow_back.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_qr_code_background.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/qr_code_background.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_person.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_person.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_circle_red.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/circle_red.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_ac_charging.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_ac_charging.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_share.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_share.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_approved.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_approved.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_qr_code.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_qr_code.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_refresh.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_refresh.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_profile.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_profile.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_signup.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_signup.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_home.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_home.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_flash_off.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_flash_off.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_map.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_map.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_marker_green.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/marker_green.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_settings.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_settings.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_maps.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_maps.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_operator_dashboard.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_operator_dashboard.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_circle_green.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/circle_green.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_charging.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_charging.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_stations.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_stations.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_home.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_home.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/navigation_nav_graph.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/navigation/nav_graph.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_circle_background.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/circle_background.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_station_details.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_station_details.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_approved.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_approved.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_activity_operator.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_operator.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_qr_code.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_qr_code.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_custom_barcode_scanner.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/custom_barcode_scanner.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_activity_station_selection.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_station_selection.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/menu_operator_bottom_navigation_menu.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/menu/operator_bottom_navigation_menu.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/navigation_nav_graph.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/navigation/nav_graph.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_marker_red.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/marker_red.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_dashboard.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_dashboard.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_completed.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_completed.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_activity_operator.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_operator.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_home.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_home.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/xml_data_extraction_rules.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_activity_operator_bookings.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_operator_bookings.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_email.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_email.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_stations.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_stations.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_time.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_time.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_settings.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_settings.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_clock.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_clock.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.evcharging.mobile.app-main-53:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_activity_operator_simple.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_operator_simple.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_dc_charging.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_dc_charging.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_flash_off.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_flash_off.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_activity_api_test.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_api_test.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_nav_header.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/nav_header.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_list.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_list.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_custom_barcode_scanner.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/custom_barcode_scanner.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_map.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_map.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_lock.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_lock.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.evcharging.mobile.app-main-53:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_circle_red.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/circle_red.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_qr_generator.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_qr_generator.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/xml_data_extraction_rules.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/xml/data_extraction_rules.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_edit.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_edit.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_item_operator_booking.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/item_operator_booking.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/menu_bottom_navigation_menu.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/menu/bottom_navigation_menu.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_profile.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_profile.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_bookings.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_bookings.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_activity_station_selection.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_station_selection.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/menu_bottom_navigation_menu.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/menu/bottom_navigation_menu.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_button_primary_background.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/button_primary_background.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_refresh.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_refresh.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_login.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_login.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_dc_charging.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_dc_charging.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_id_card.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_id_card.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_availability_background_total.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/availability_background_total.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_activity_splash.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_splash.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_qr_scanner.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_qr_scanner.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.evcharging.mobile.app-main-53:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_activity_splash.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_splash.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.evcharging.mobile.app-main-53:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_search_background.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/search_background.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_phone.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_phone.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_phone.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_phone.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.evcharging.mobile.app-main-53:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_pending.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_pending.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_lock.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_lock.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_activity_create_booking.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_create_booking.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_arrow_forward.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_arrow_forward.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_item_operator_booking.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/item_operator_booking.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_map.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_map.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_clock.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_clock.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_activity_api_test.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_api_test.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.evcharging.mobile.app-main-53:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_signup.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_signup.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.evcharging.mobile.app-main-53:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_bookings.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_bookings.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_ev_charging.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_ev_charging.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_cancelled.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_cancelled.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_cancelled.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_cancelled.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_item_booking.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/item_booking.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_demo_info_background.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/demo_info_background.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_home.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_home.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_stations.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_stations.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_qr_code.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_qr_code.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_info.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_info.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_scanner_overlay.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/scanner_overlay.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_maps.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_maps.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_profile.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_profile.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_close.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_close.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.evcharging.mobile.app-main-53:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/layout_fragment_profile.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_profile.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/navigation_operator_nav_graph.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/navigation/operator_nav_graph.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_marker_green.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/marker_green.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_ev_charging.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_ev_charging.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_calendar_today.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_calendar_today.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_person.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_person.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-merged_res-51:/drawable_ic_profile_avatar.xml.flat",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/drawable/ic_profile_avatar.xml"
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_map.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_map.xml"
+    },
+    {
+        "merged": "com.evcharging.mobile.app-merged_res-51:/layout_fragment_operator_dashboard.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_operator_dashboard.xml"
+    },
+    {
+        "merged": "com.evcharging.mobile.app-merged_res-51:/drawable_ic_close.xml.flat",
+        "source": "com.evcharging.mobile.app-main-53:/drawable/ic_close.xml"
     }
 ]

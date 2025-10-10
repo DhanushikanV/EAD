@@ -169,3 +169,5 @@ public class OperatorBookingsActivity extends AppCompatActivity {
         Toast.makeText(this, "Booking cancelled: " + booking.getId(), Toast.LENGTH_SHORT).show();
     }
 }
+
+

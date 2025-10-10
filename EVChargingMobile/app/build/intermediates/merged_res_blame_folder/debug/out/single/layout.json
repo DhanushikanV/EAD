@@ -1,130 +1,126 @@
 [
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_maps.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_maps.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_maps.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_maps.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_operator.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_operator.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/item_station_selection.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/item_station_selection.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_operator_dashboard.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_operator_dashboard.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_main.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_main.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_station_selection.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_station_selection.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_operator_bookings.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_operator_bookings.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_qr_generator.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_qr_generator.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_maps.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_maps.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_signup.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_signup.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_dashboard.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_dashboard.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_maps.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_maps.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_station_details.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_station_details.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/item_station.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/item_station.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_create_booking.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_create_booking.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/item_station_selection.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/item_station_selection.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_operator_dashboard.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_operator_dashboard.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/custom_barcode_scanner.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/custom_barcode_scanner.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_api_test.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_api_test.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_home.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_home.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/nav_header.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/nav_header.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_map.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_map.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/custom_barcode_scanner.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/custom_barcode_scanner.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_bookings.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_bookings.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_bookings.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_bookings.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/item_booking.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/item_booking.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_operator.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_operator.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_main.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_main.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_signup.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_signup.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/item_operator_booking.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/item_operator_booking.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_home.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_home.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_operator_simple.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_operator_simple.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_auth.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_auth.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_create_booking.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_create_booking.xml"
-    },
-    {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_splash.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_splash.xml"
-    },
-    {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_dashboard.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_dashboard.xml"
-    },
-    {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_login.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_login.xml"
-    },
-    {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_station_details.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_station_details.xml"
-    },
-    {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_stations.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_stations.xml"
-    },
-    {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_auth.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_auth.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_qr_scanner.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_qr_scanner.xml"
     },
     {
         "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_operator_simple.xml",
         "source": "com.evcharging.mobile.app-main-53:/layout/activity_operator_simple.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_api_test.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_api_test.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_splash.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_splash.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_create_booking.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_create_booking.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_station_selection.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/activity_station_selection.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_profile.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_profile.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_profile.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_profile.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_qr_scanner.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_qr_scanner.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_login.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_login.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/activity_operator_bookings.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/activity_operator_bookings.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_qr_code.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_qr_code.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_qr_code.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/fragment_qr_code.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_create_booking.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_create_booking.xml"
     },
     {
-        "merged": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-mergeDebugResources-50:/layout/nav_header.xml",
-        "source": "/Users/dhanushikan/.gradle/daemon/7.5/com.evcharging.mobile.app-main-53:/layout/nav_header.xml"
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_qr_generator.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_qr_generator.xml"
+    },
+    {
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_stations.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_stations.xml"
+    },
+    {
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/item_station.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/item_station.xml"
+    },
+    {
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/fragment_map.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/fragment_map.xml"
+    },
+    {
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/item_operator_booking.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/item_operator_booking.xml"
+    },
+    {
+        "merged": "com.evcharging.mobile.app-mergeDebugResources-50:/layout/item_booking.xml",
+        "source": "com.evcharging.mobile.app-main-53:/layout/item_booking.xml"
     }
 ]

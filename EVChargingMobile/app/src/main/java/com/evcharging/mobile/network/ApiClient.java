@@ -25,12 +25,10 @@ import java.io.IOException;
  */
 public class ApiClient {
 
-    // TODO: Replace with your actual backend URL
     // Backend API Configuration - Load from environment
-    // Using machine's actual IP address for emulator connection
+    // For emulator: use host machine's actual IP address
     private static final String BASE_URL = System.getenv("BACKEND_API_URL") != null ? 
-        System.getenv("BACKEND_API_URL") : "http://192.168.8.111:5263/api/";
-    // For emulator to connect to host machine backend using actual IP
+        System.getenv("BACKEND_API_URL") : "http://172.28.11.45:5263/api/";
     
     private static Retrofit retrofit;
     private static SharedPreferencesManager preferencesManager;
