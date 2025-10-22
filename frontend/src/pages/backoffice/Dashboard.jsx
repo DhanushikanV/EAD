@@ -11,7 +11,7 @@ const DashboardBackoffice = () => {
     activeStations: 0,
     pendingBookings: 0
   });
-
+//
   const [stations, setStations] = useState([]);
 
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
