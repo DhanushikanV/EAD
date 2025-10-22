@@ -1,0 +1,48 @@
+name: Deploy React Frontend to Azure App Service
+
+on:
+  push:
+    branches:
+      - main
+    paths: [ 'frontend/**' ]
+  workflow_dispatch:
+
+env:
+  AZURE_WEBAPP_NAME: EAD-Frontend
+  NODE_VERSION: '18.x'
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    name: Build and Deploy React App
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+          
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm ci
+          
+      - name: Build React app
+        run: |
+          cd frontend
+          npm run build
+        env:
+          REACT_APP_API_URL: https://ead-backend-hya6gkbfgrawecae.canadacentral-01.azurewebsites.net/api
+          
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          slot-name: 'Production'
+          package: frontend/build
+          publish-profile: ${{ secrets.AZURE_FRONTEND_PUBLISH_PROFILE }}
