@@ -3,7 +3,6 @@ import api from '../../../services/api';
 
 const OperatorBookingsTable = () => {
   const [bookingList, setBookingList] = useState([]);
-  const [originalList, setOriginalList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingIds, setLoadingIds] = useState([]); // tracks bookings being updated
   const [errorMessage, setErrorMessage] = useState('');
@@ -17,7 +16,6 @@ const OperatorBookingsTable = () => {
 
       // ✅ save data into state
       setBookingList(response.data);
-      setOriginalList(response.data);
     } catch (error) {
       console.error("Failed to fetch bookings:", error);
       setErrorMessage("Failed to fetch bookings from server.");

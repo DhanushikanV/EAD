@@ -12,7 +12,6 @@ import StationsManagement from './pages/backoffice/StationsManagement';
 import BookingsManagement from './pages/backoffice/BookingsManagement';
 import OperatorBookings from './pages/stationOperator/BookingsManagement';
 import StationManagement from './pages/stationOperator/StationManagement';
-import CommonDashboard from './pages/shared/Dashboard';
 import ProtectedRoute from './routes/ProtectedRoute';
 
 import Test from './pages/test';
