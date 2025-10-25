@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AiOutlineMail, AiOutlineLock } from 'react-icons/ai'; // Icons for email & password
 import LoginIllustration from '../../assets/vecteezy_modern-electric-vehicle-charging-station_47067449.png'; // Add your image in src/assets
+import api from '../../services/api';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,19 +17,11 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5263/api/User/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ Email: email, Password: password }),
+      const { data } = await api.post('/User/login', {
+        Email: email,
+        Password: password,
       });
 
-      if (!response.ok) {
-        const data = await response.json();
-        setError(data.message || 'Login failed');
-        return;
-      }
-
-      const data = await response.json();
       const token = data.token;
       localStorage.setItem('jwtToken', token);
 

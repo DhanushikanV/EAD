@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../services/api";
 import UserForm from "../../components/forms/backofficeForms/UserForm";
 // Import your table version
 import UsersTable from "../../components/tables/backofficeTables/UserTable";
@@ -11,12 +11,12 @@ const UsersManagement = () => {
   const [loading, setLoading] = useState(true);
   const [viewMode, setViewMode] = useState("card"); // 'card' or 'table'
 
-  const apiBase = "http://localhost:5263/api/User";
+  const apiBase = "/User";
 
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(apiBase);
+      const response = await api.get(apiBase);
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -54,7 +54,7 @@ const UsersManagement = () => {
           payload.Password = data.passwordHash;
         }
 
-        await axios.put(`${apiBase}/${editingUser.id}`, payload);
+        await api.put(`${apiBase}/${editingUser.id}`, payload);
       } else {
         const payload = {
           Username: data.username,
@@ -64,7 +64,7 @@ const UsersManagement = () => {
           PasswordHash: data.passwordHash,
         };
 
-        await axios.post(apiBase, payload);
+        await api.post(apiBase, payload);
       }
 
       await fetchUsers();
@@ -81,7 +81,7 @@ const UsersManagement = () => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
 
     try {
-      await axios.delete(`${apiBase}/${id}`);
+      await api.delete(`${apiBase}/${id}`);
       setUsers((prev) => prev.filter((u) => u.id !== id));
     } catch (error) {
       console.error("Error deleting user:", error);

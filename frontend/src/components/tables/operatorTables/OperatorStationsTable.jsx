@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../../services/api";
 
 const OperatorStationsTable = () => {
   const [stationList, setStationList] = useState([]);
@@ -13,7 +13,7 @@ const OperatorStationsTable = () => {
 
   const fetchStations = async () => {
     try {
-      const response = await axios.get("http://localhost:5263/api/ChargingStation");
+      const response = await api.get("/ChargingStation");
       setStationList(response.data);
     } catch (error) {
       console.error("Error fetching stations:", error);
@@ -37,8 +37,8 @@ const handleSave = async () => {
   }
 
   try {
-    await axios.put(
-      `http://localhost:5263/api/ChargingStation/${stationToUpdate.id}`,
+    await api.put(
+      `/ChargingStation/${stationToUpdate.id}`,
       { ...stationToUpdate, availableSlots: Number(newSlotValue) }
     );
 

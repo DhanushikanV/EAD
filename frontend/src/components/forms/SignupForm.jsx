@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../../services/api";
 
 const SignupForm = () => {
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ const SignupForm = () => {
     };
 
     try {
-      await axios.post("http://localhost:5263/api/User", payload);
+      await api.post("/User", payload);
       navigate("/login");
     } catch (err) {
       console.error("Error saving user:", err.response?.data || err);

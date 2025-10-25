@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Map from '../../components/maps/Map';
 import Card from '../../components/common/Card';
-import axios from "axios";
+import api from "../../services/api";
 
 const CommonDashboard = ({ role }) => {
   const [stations, setStations] = useState([]);
@@ -14,17 +14,17 @@ const CommonDashboard = ({ role }) => {
     approvedReservations: 0
   });
 
-  const apiBaseUsers = 'http://localhost:5263/api/User';
-  const apiBaseOwners = 'http://localhost:5263/api/EVOwner';
-  const apiBaseStations = 'http://localhost:5263/api/ChargingStation';
-  const apiBaseBookings = 'http://localhost:5263/api/Booking';
+  const apiBaseUsers = '/User';
+  const apiBaseOwners = '/EVOwner';
+  const apiBaseStations = '/ChargingStation';
+  const apiBaseBookings = '/Booking';
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [stationsRes, bookingsRes] = await Promise.all([
-          axios.get(apiBaseStations),
-          axios.get(apiBaseBookings),
+          api.get(apiBaseStations),
+          api.get(apiBaseBookings),
         ]);
 
         const activeStations = stationsRes.data.filter(s => s.status === "Active");
@@ -32,8 +32,8 @@ const CommonDashboard = ({ role }) => {
 
         if (role === 'Backoffice') {
           const [usersRes, ownersRes] = await Promise.all([
-            axios.get(apiBaseUsers),
-            axios.get(apiBaseOwners),
+            api.get(apiBaseUsers),
+            api.get(apiBaseOwners),
           ]);
 
           setDashboard({

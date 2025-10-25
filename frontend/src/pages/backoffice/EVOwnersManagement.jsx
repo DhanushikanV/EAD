@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../services/api';
 import EVOwnersTable from '../../components/tables/backofficeTables/EVOwnersTable';
 import EVOwnerForm from '../../components/forms/backofficeForms/EVOwnerForm';
 
@@ -18,7 +18,7 @@ const EVOwnersManagement = () => {
   const fetchEVOwners = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5263/api/EVOwner');
+      const response = await api.get('/EVOwner');
       setEvOwners(response.data);
     } catch (error) {
       console.error('Error fetching EV owners:', error);
@@ -41,9 +41,9 @@ const EVOwnersManagement = () => {
   const handleFormSubmit = async (data) => {
     try {
       if (editingOwner) {
-        await axios.put(`http://localhost:5263/api/EVOwner/${editingOwner.nic}`, data);
+        await api.put(`/EVOwner/${editingOwner.nic}`, data);
       } else {
-        await axios.post('http://localhost:5263/api/EVOwner', data);
+        await api.post('/EVOwner', data);
       }
       fetchEVOwners(); // refresh the list
       setIsFormOpen(false);
@@ -56,7 +56,7 @@ const EVOwnersManagement = () => {
   const handleDelete = async (nic) => {
     if (!window.confirm('Are you sure you want to delete this EV owner?')) return;
     try {
-      await axios.delete(`http://localhost:5263/api/EVOwner/${nic}`);
+      await api.delete(`/EVOwner/${nic}`);
       fetchEVOwners();
     } catch (error) {
       console.error('Error deleting EV owner:', error);

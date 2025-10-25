@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Map from '../../components/maps/Map'; // Your Google Map component
 import Card from '../../components/common/Card';
-import axios from "axios";
+import api from "../../services/api";
 
 const DashboardOperator = () => {
   const [stations, setStations] = useState([]);
   const [pendingReservations, setPendingReservations] = useState(0);
   const [approvedReservations, setApprovedReservations] = useState(0);
 
-  const apiStations = 'http://localhost:5263/api/ChargingStation';
-  const apiBookings = 'http://localhost:5263/api/Booking';
+  const apiStations = '/ChargingStation';
+  const apiBookings = '/Booking';
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [stationsRes, bookingsRes] = await Promise.all([
-          axios.get(apiStations),
-          axios.get(apiBookings),
+          api.get(apiStations),
+          api.get(apiBookings),
         ]);
 
         // Only active stations for map

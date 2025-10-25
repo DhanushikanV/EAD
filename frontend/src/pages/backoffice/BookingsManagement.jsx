@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../services/api";
 import BookingsTable from "../../components/tables/backofficeTables/BookingTable";
 
 const BookingsManagement = () => {
@@ -18,7 +18,7 @@ const BookingsManagement = () => {
   const fetchBookings = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5263/api/Booking");
+      const response = await api.get("/Booking");
       setBookings(response.data);
     } catch (error) {
       console.error("Error fetching bookings:", error);
@@ -30,7 +30,7 @@ const BookingsManagement = () => {
 
   const handleUpdateStatus = async (booking, newStatus) => {
     try {
-      await axios.put(`http://localhost:5263/api/Booking/${booking.id}`, {
+      await api.put(`/Booking/${booking.id}`, {
         ...booking,
         status: newStatus,
       });
@@ -45,7 +45,7 @@ const BookingsManagement = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this booking?")) return;
     try {
-      await axios.delete(`http://localhost:5263/api/Booking/${id}`);
+      await api.delete(`/Booking/${id}`);
       fetchBookings();
     } catch (error) {
       console.error("Error deleting booking:", error);
@@ -55,7 +55,7 @@ const BookingsManagement = () => {
 
   const fetchStations = async () => {
     try {
-      const res = await axios.get("http://localhost:5263/api/ChargingStation");
+      const res = await api.get("/ChargingStation");
       const map = {};
       (res.data || []).forEach((s) => {
         if (s && s.id) {

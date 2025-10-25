@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../services/api';
 import StationForm from '../../components/forms/backofficeForms/StationForm';
 import StationsTable from '../../components/tables/backofficeTables/StationsTable';
 
@@ -10,12 +10,12 @@ const StationsManagement = () => {
   const [editingStation, setEditingStation] = useState(null);
   const [viewMode, setViewMode] = useState("card"); // toggle state: 'card' | 'table'
 
-  const apiBase = 'http://localhost:5263/api/ChargingStation';
+  const apiBase = '/ChargingStation';
 
   const fetchStations = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(apiBase);
+      const response = await api.get(apiBase);
       setStations(response.data);
     } catch (error) {
       console.error('Error fetching stations:', error);
@@ -41,12 +41,12 @@ const StationsManagement = () => {
   const handleFormSubmit = async (data) => {
     try {
       if (editingStation) {
-        await axios.put(`${apiBase}/${editingStation.id}`, data);
+        await api.put(`${apiBase}/${editingStation.id}`, data);
         setStations(prev =>
           prev.map(s => (s.id === editingStation.id ? { ...s, ...data } : s))
         );
       } else {
-        const response = await axios.post(apiBase, data);
+        const response = await api.post(apiBase, data);
         setStations(prev => [...prev, response.data]);
       }
       setIsFormOpen(false);
@@ -59,7 +59,7 @@ const StationsManagement = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this station?')) return;
     try {
-      await axios.delete(`${apiBase}/${id}`);
+      await api.delete(`${apiBase}/${id}`);
       setStations(stations.filter((s) => s.id !== id));
     } catch (error) {
       console.error('Error deleting station:', error);

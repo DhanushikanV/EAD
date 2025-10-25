@@ -5,7 +5,7 @@ function Test() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5263/api/User")
+    fetch("/api/User")
       .then(res => res.json())
       .then(data => setOwners(data))
       .catch(err => console.error("Failed to fetch EVOwners:", err))

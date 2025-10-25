@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from '../../components/common/Card';
-import axios from "axios";
+import api from "../../services/api";
 import Map from '../../components/maps/Map'; // make sure this path points to your Map component
 import { useJsApiLoader } from "@react-google-maps/api";
 
@@ -20,19 +20,20 @@ const DashboardBackoffice = () => {
     googleMapsApiKey,
   });
 
-  const apiBaseUsers = 'http://localhost:5263/api/User';
-  const apiBaseOwners = 'http://localhost:5263/api/EVOwner';
-  const apiBaseStations = 'http://localhost:5263/api/ChargingStation';
-  const apiBaseBookings = 'http://localhost:5263/api/Booking';
+  // API endpoints (resolved against shared axios baseURL)
+  const apiBaseUsers = '/User';
+  const apiBaseOwners = '/EVOwner';
+  const apiBaseStations = '/ChargingStation';
+  const apiBaseBookings = '/Booking';
 
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
         const [usersRes, ownersRes, stationsRes, bookingsRes] = await Promise.all([
-          axios.get(apiBaseUsers),
-          axios.get(apiBaseOwners),
-          axios.get(apiBaseStations),
-          axios.get(apiBaseBookings),
+          api.get(apiBaseUsers),
+          api.get(apiBaseOwners),
+          api.get(apiBaseStations),
+          api.get(apiBaseBookings),
         ]);
 
         console.log("Users:", usersRes.data);
