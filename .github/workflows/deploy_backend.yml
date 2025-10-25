@@ -1,0 +1,59 @@
+name: Build and deploy ASP.NET Core app to Azure Web App - EAD-Backend
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'ev_2/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PROJECT_PATH: ev_2/ev_2
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+          dotnet-quality: 'ga'
+
+      - name: Restore
+        run: dotnet restore ./${{ env.PROJECT_PATH }}
+
+      - name: Build
+        run: dotnet build ./${{ env.PROJECT_PATH }} --configuration Release --no-restore
+
+      - name: Publish
+        run: dotnet publish ./${{ env.PROJECT_PATH }} -c Release -o ./publish
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dotnet-app
+          path: publish
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dotnet-app
+          path: publish
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: EAD-Backend
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EAD_BACKEND }}
+          package: publish
+
