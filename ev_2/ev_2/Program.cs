@@ -66,8 +66,24 @@ builder.Services.Configure<DatabaseSettings>(
 
 builder.Services.AddSingleton<IMongoClient>(s =>
 {
-    var settings = s.GetRequiredService<IOptions<DatabaseSettings>>().Value;
-    return new MongoClient(settings.ConnectionString);
+    // Prefer strongly-typed config, but fall back to env vars if placeholders are present
+    var databaseSettings = s.GetRequiredService<IOptions<DatabaseSettings>>().Value;
+    var configuration = s.GetRequiredService<IConfiguration>();
+
+    string? connectionString = databaseSettings.ConnectionString;
+    if (string.IsNullOrWhiteSpace(connectionString) || connectionString.StartsWith("${"))
+    {
+        connectionString = configuration["MongoDBSettings:ConnectionString"]
+            ?? Environment.GetEnvironmentVariable("MongoDBSettings__ConnectionString")
+            ?? Environment.GetEnvironmentVariable("MONGODB_CONNECTION_STRING");
+    }
+
+    if (string.IsNullOrWhiteSpace(connectionString) || connectionString.StartsWith("${"))
+    {
+        throw new InvalidOperationException("MongoDB connection string is not configured. Set MongoDBSettings__ConnectionString or MONGODB_CONNECTION_STRING.");
+    }
+
+    return new MongoClient(connectionString);
 });
 
 // -------------------- Register Services --------------------
