@@ -45,11 +45,18 @@ const DashboardOperator = () => {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card title="Pending Reservations" value={pendingReservations} color="bg-red-100" />
         <Card title="Approved Reservations" value={approvedReservations} color="bg-green-100" />
         <Card title="Nearby Stations" value={stations.length} color="bg-blue-100" />
-      </div>
+      </div> */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <Card title="Pending Reservations" value={pendingReservations} type="bookings" />
+  <Card title="Approved Reservations" value={approvedReservations} type="owners" />
+  <Card title="Nearby Stations" value={stations.length} type="stations" />
+</div>
+
+
     </div>
   );
 };
